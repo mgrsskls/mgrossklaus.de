@@ -35,7 +35,7 @@
 .token.pseudo-class,
 .token.pseudo-element,
 .token.string {
-  color: #a26613;
+  color: #955e11;
 }
 
 .token.class-name,
@@ -46,7 +46,7 @@
 .token.comment,
 .token.doctype,
 .token.prolog {
-  color: #aabfc9;
+  color: #667277;
 }
 
 .token.deleted,
