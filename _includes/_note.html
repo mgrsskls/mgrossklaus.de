@@ -1,0 +1,19 @@
+<article class="Note">
+  {%- if til -%}
+  <span class="Note-til">Today I learned</span>
+  {%- endif -%} {%- if title -%}
+  <h2>
+    {%- if url -%}<a href="{{ url }}"
+      >{%- endif -%} {{ title }} {%- if url -%}</a
+    >{%- endif -%}
+  </h2>
+  {%- endif -%}
+  <small class="Note-date">
+    <time datetime="{% isoString date %}">{{ date }}</time>
+  </small>
+  {{ content }} {%- if source -%}
+  <p>
+    <small><b>Source:</b> <a href="{{ source }}">{{ source }}</a></small>
+  </p>
+  {%- endif -%}
+</article>

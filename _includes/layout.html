@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michael Großklaus</title>
+    <link href="/css/common.css" rel="stylesheet" />
+    <link href="/css/code-light.css" rel="stylesheet" />
+    <link
+      href="/css/code-dark.css"
+      rel="stylesheet"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Michael Großklaus"
+      href="/feed.xml"
+    />
+  </head>
+  <body>
+    <section class="Section Section--about">
+      <div class="About">
+        <picture>
+          <source srcset="/me-x2.avif" type="image/avif" />
+          <source srcset="/me-x2.webp" type="image/webp" />
+          <source
+            srcset="/me-x1.avif"
+            type="image/avif"
+            media="(prefers-reduced-data: reduced)"
+          />
+          <source
+            srcset="/me-x1.webp"
+            type="image/webp"
+            media="(prefers-reduced-data: reduced)"
+          />
+          <source srcset="/me-x1.jpg" media="(prefers-reduced-data: reduced)" />
+          <img
+            src="/me-x2.jpg"
+            alt="Profile picture of Michael Großklaus"
+            width="300"
+            height="300"
+            fetchpriority="high"
+          />
+        </picture>
+        <h1>Michael Großklaus</h1>
+        <p>
+          Doing frontend things at
+          <a href="https://factorial.io">factorial.io</a> and created
+          <a href="https://miyagi.dev">miyagi.dev</a>.
+        </p>
+        <dl>
+          <dt>GitHub</dt>
+          <dd><a href="https://github.com/mgrsskls">github.com/mgrsskls</a></dd>
+          <dt>Mastodon</dt>
+          <dd>
+            <a href="https://indieweb.social/@mgrsskls"
+              >indieweb.social/@mgrsskls</a
+            >
+          </dd>
+        </dl>
+        <a class="RssLink" href="/feed.xml">RSS</a>
+      </div>
+    </section>
+    <section class="Section Section--content">
+      <div class="Content">{{ content }}</div>
+    </section>
+    <script>
+      document.querySelectorAll("time").forEach((time) => {
+        time.textContent = new Date(time.dateTime).toLocaleDateString();
+      });
+    </script>
+  </body>
+</html>

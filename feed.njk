@@ -1,0 +1,41 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+metadata:
+  title: Michael Großklaus
+  language: en
+  url: https://www.mgrossklaus.de/
+  author:
+    name: Michael Großklaus
+    email: mail@mgrossklaus.de
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/atom+xml" />
+  <link href="{{ metadata.url }}" rel="alternate" type="text/html"/>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  <updated>{{
+    collections.posts | getNewestCollectionItemDate | dateToRfc3339
+  }}</updated>
+  <id>{{ metadata.url }}</id>
+
+  {%- for post in collections.posts | reverse %} {%- set absolutePostUrl =
+  post.url | absoluteUrl(metadata.url) %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}" />
+    <updated>{{ post.date | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content
+      xml:lang="{{ metadata.language }}"
+      type="html"
+      >{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content
+    >
+  </entry>
+  {%- endfor %}
+</feed>
