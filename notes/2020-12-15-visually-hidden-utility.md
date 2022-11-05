@@ -1,3 +1,7 @@
+---
+title: Utility class for hiding elements visually
+---
+
 Hiding elements visually, but keeping them for screen readers:
 
 ```css
