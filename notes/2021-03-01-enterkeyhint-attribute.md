@@ -1,5 +1,5 @@
 ---
-title: `enterkeyhint` attribute
+title: enterkeyhint attribute
 source: https://html.spec.whatwg.org/multipage/interaction.html#input-modalities:-the-enterkeyhint-attribute
 ---
 
