@@ -1,0 +1,49 @@
+.Section--about {
+  --color-bg: var(--color-dark-bg);
+  --color-text: var(--color-dark-text);
+  --color-heading: var(--color-dark-heading);
+  --color-secondary: var(--color-dark-secondary);
+  --color-light: var(--color-dark-light);
+  --color-link: var(--color-dark-link);
+
+  color-scheme: dark;
+}
+
+.About-img {
+  aspect-ratio: 1/1;
+}
+
+dt {
+  font-weight: bold;
+  margin-inline-end: 0.5em;
+}
+
+dd {
+  margin-inline-start: 0;
+}
+
+dd + dt {
+  margin-block-start: 1em;
+}
+
+@media (max-width: 48.0625em) {
+  .About-img {
+    inline-size: 8rem;
+  }
+}
+
+@media (min-width: 48.0625em) {
+  .Section--about {
+    position: sticky;
+    inset-block-start: 0;
+    block-size: 100vh;
+  }
+
+  .About {
+    display: flex;
+    flex-direction: column;
+    block-size: 100%;
+    max-inline-size: 36rem;
+    margin-inline-start: auto;
+  }
+}

@@ -1,3 +1,4 @@
+@import "./about.css";
 @import "./code.css";
 
 * {
@@ -62,17 +63,6 @@ a {
   padding: clamp(1rem, 4vw, 4rem);
 }
 
-.Section--about {
-  --color-bg: var(--color-dark-bg);
-  --color-text: var(--color-dark-text);
-  --color-heading: var(--color-dark-heading);
-  --color-secondary: var(--color-dark-secondary);
-  --color-light: var(--color-dark-light);
-  --color-link: var(--color-dark-link);
-
-  color-scheme: dark;
-}
-
 .Section--content {
   color-scheme: light dark;
 }
@@ -81,21 +71,7 @@ img {
   display: block;
   max-inline-size: 100%;
   block-size: auto;
-  aspect-ratio: 1/1;
   border-radius: 0.5rem;
-}
-
-dt {
-  font-weight: bold;
-  margin-inline-end: 0.5em;
-}
-
-dd {
-  margin-inline-start: 0;
-}
-
-dd + dt {
-  margin-block-start: 1em;
 }
 
 .Note h2 {
@@ -143,30 +119,10 @@ code {
   font-size: 0.8125em;
 }
 
-@media (max-width: 48.0625em) {
-  img {
-    inline-size: 8rem;
-  }
-}
-
 @media (min-width: 48.0625em) {
   body {
     display: grid;
     grid-template-columns: 38.2% 61.2%;
-  }
-
-  .Section--about {
-    position: sticky;
-    inset-block-start: 0;
-    block-size: 100vh;
-  }
-
-  .About {
-    display: flex;
-    flex-direction: column;
-    block-size: 100%;
-    max-inline-size: 36rem;
-    margin-inline-start: auto;
   }
 
   .Content {
