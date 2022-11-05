@@ -15,4 +15,3 @@ The inputmode attribute allows to define the type of keyboard which is shown whe
 - search
 - email
 - url
-- 
