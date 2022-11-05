@@ -1,4 +1,23 @@
-code[class*="language-"],
+pre,
+:not(pre) > code {
+  background: var(--color-bg-code);
+  border: 0.0625em solid var(--color-secondary);
+  border-radius: 0.2em;
+}
+
+pre {
+  padding: 1em;
+}
+
+:not(pre) > code {
+  padding: 0.1em 0.25em;
+}
+
+code {
+  font-family: Menlo, monospace;
+  font-size: 0.8125em;
+}
+
 pre[class*="language-"] {
   text-align: left;
   white-space: pre;

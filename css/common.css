@@ -74,6 +74,18 @@ img {
   border-radius: 0.5rem;
 }
 
+.Notes {
+  list-style: none;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+}
+
+.Notes-item + .Notes-item {
+  margin-block-start: 3rem;
+  border-block-start: 0.0625em solid var(--color-light);
+  padding-block-start: 3rem;
+}
+
 .Note h2 {
   margin-block: 0;
 }
@@ -99,26 +111,6 @@ h2 + .Note-date {
   font-size: 0.875em;
 }
 
-pre,
-:not(pre) > code {
-  background: var(--color-bg-code);
-  border: 0.0625em solid var(--color-secondary);
-  border-radius: 0.2em;
-}
-
-pre {
-  padding: 1em;
-}
-
-:not(pre) > code {
-  padding: 0.1em 0.25em;
-}
-
-code {
-  font-family: Menlo, monospace;
-  font-size: 0.8125em;
-}
-
 @media (min-width: 48.0625em) {
   body {
     display: grid;
@@ -132,7 +124,6 @@ code {
     min-block-size: 100%;
   }
 
-  .RssLink,
   .BackLink {
     margin: auto 0 0;
   }

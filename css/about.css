@@ -34,16 +34,20 @@ dd + dt {
 
 @media (min-width: 48.0625em) {
   .Section--about {
+    display: flex;
+    flex-direction: column;
     position: sticky;
     inset-block-start: 0;
     block-size: 100vh;
+    overflow-y: auto;
   }
 
   .About {
     display: flex;
     flex-direction: column;
-    block-size: 100%;
+    inline-size: 100%;
     max-inline-size: 36rem;
     margin-inline-start: auto;
+    flex: 1;
   }
 }

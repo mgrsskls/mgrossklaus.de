@@ -2,20 +2,6 @@
 layout: layout.html
 ---
 
-<style>
-  .Notes {
-    list-style: none;
-    margin-block-start: 0;
-    padding-inline-start: 0;
-  }
-
-  .Notes-item + .Notes-item {
-    margin-block-start: 3rem;
-    border-block-start: 0.0625em solid var(--color-light);
-    padding-block-start: 3rem;
-  }
-</style>
-
 <ol class="Notes" role="list">
   {%- for post in collections.posts reversed -%}
   <li class="Notes-item">
