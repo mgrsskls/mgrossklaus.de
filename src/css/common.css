@@ -80,6 +80,12 @@ img {
   border-radius: 0.5rem;
 }
 
+.NotesIntro {
+  margin-block: 0 2rem;
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
 .Notes {
   list-style: none;
   margin-block-start: 0;
