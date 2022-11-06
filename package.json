@@ -1,17 +1,24 @@
 {
   "name": "mgrossklaus.de",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "config": {
+    "css": "postcss css/common.css --dir dist/css"
+  },
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy"
+    "build": "npm run build:css && npm run build:11ty",
+    "build:11ty": "eleventy",
+    "build:css": "NODE_ENV=production $npm_package_config_css"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Michael Großklaus",
+  "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "cssnano": "^5.1.14",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^15.0.0"
   }
 }

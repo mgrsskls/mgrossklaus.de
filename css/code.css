@@ -1,3 +1,6 @@
+@import url("./code-light.css");
+@import url("./code-dark.css");
+
 pre,
 :not(pre) > code {
   background: var(--color-bg-code);

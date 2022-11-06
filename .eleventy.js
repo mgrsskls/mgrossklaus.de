@@ -4,7 +4,7 @@ const plugins = [
 ];
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("css/**/*.css");
+  eleventyConfig.addPassthroughCopy({ "dist/css/*": "css" });
   eleventyConfig.addPassthroughCopy("*.avif");
   eleventyConfig.addPassthroughCopy("*.webp");
   eleventyConfig.addPassthroughCopy("*.jpg");
