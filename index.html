@@ -1,15 +1,10 @@
----
-layout: layout.html
----
-
 <ol class="Notes" role="list">
   {%- for post in collections.posts reversed -%}
   <li class="Notes-item">
     {% unless post.data.blog %} {% assign content = post.templateContent %}{%
     else %} {% assign content = null %} {% endunless %} {% include
-    "./_includes/_note.html" til: post.data.til, date: post.date, title:
-    post.data.title, content: content, url: post.url, source: post.data.source
-    %}
+    "./_note.html" til: post.data.til, date: post.date, title: post.data.title,
+    content: content, url: post.url, source: post.data.source %}
   </li>
   {%- endfor -%}
 </ol>

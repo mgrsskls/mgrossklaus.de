@@ -5,10 +5,8 @@ const plugins = [
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "dist/css/*": "css" });
-  eleventyConfig.addPassthroughCopy("*.avif");
-  eleventyConfig.addPassthroughCopy("*.webp");
-  eleventyConfig.addPassthroughCopy("*.jpg");
-  eleventyConfig.addPassthroughCopy("**/*.png");
+  eleventyConfig.addPassthroughCopy({ "src/img": "img" });
+  eleventyConfig.addPassthroughCopy("notes/**/*.png");
 
   eleventyConfig.addGlobalData("layout", "layout.html");
 
@@ -19,4 +17,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("isoString", (date) => date.toISOString());
 
   plugins.forEach((plugin) => eleventyConfig.addPlugin(plugin));
+
+  return {
+    dir: {
+      includes: "src/html",
+    },
+  };
 };

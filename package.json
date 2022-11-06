@@ -2,7 +2,7 @@
   "name": "mgrossklaus.de",
   "version": "1.0.0",
   "config": {
-    "css": "postcss css/common.css --dir dist/css"
+    "css": "postcss src/css/common.css --dir dist/css"
   },
   "scripts": {
     "dev": "eleventy --serve",
