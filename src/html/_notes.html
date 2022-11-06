@@ -27,13 +27,13 @@
         {% assign content = null %}
       {% endunless %}
       {% include "./_note.html"
+        content: content,
+        date: note.date,
+        source: note.data.source,
         tags: note.data.tags,
         til: note.data.til,
-        date: note.date,
         title: note.data.title,
-        content: content,
         url: note.url,
-        source: note.data.source
       %}
     </li>
   {%- endfor -%}
