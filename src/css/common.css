@@ -55,6 +55,10 @@ h2 {
 
 a {
   color: var(--color-link);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .Section {
