@@ -1,6 +1,8 @@
 ---
 title: Animation principles
 source: https://uxdesign.cc/the-ultimate-guide-to-proper-use-of-animation-in-ux-10bd98614fa9
+tags:
+  - animations
 ---
 
 The following principles are valid for all kinds of animations:

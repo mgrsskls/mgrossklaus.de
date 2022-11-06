@@ -1,0 +1,29 @@
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Tag {
+  font-size: 0.875em;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  border: 0.0625em solid var(--color-heading);
+  border-radius: 0.2em;
+}
+
+a.Tag {
+  color: var(--color-heading);
+}
+
+a.Tag:hover {
+  text-decoration: underline;
+}
+
+span.Tag {
+  color: #fff;
+  background: var(--color-heading);
+}

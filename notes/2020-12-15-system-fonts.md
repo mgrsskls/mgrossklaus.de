@@ -1,6 +1,9 @@
 ---
 title: System fonts
 source: https://booking.design/implementing-system-fonts-on-booking-com-a-lesson-learned-bdc984df627f
+tags:
+  - typography
+  - css
 ---
 
 ```css

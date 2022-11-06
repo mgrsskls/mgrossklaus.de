@@ -1,19 +1,55 @@
 <article class="Note">
   {%- if til -%}
-  <span class="Note-til">Today I learned</span>
-  {%- endif -%} {%- if title -%}
-  <h2>
-    {%- if url -%}<a href="{{ url }}"
-      >{%- endif -%} {{ title }} {%- if url -%}</a
-    >{%- endif -%}
-  </h2>
+    <span class="Note-til">Today I learned</span>
   {%- endif -%}
-  <small class="Note-date">
-    <time datetime="{% isoString date %}">{{ date }}</time>
-  </small>
-  {{ content }} {%- if source -%}
-  <p>
-    <small><b>Source:</b> <a href="{{ source }}">{{ source }}</a></small>
-  </p>
+  
+  {%- if title -%}
+    <h2>
+      {%- if url -%}<a href="{{ url }}">{%- endif -%}
+        {{ title }}
+      {%- if url -%}</a>{%- endif -%}
+    </h2>
+  {%- endif -%}
+  
+  {%- if date or tags -%}
+    <dl class="Note-metaWrapper">
+      {%- if date -%}
+        <div class="Note-meta">
+          <dt>Date:</dt>
+          <dd><time datetime="{% isoString date %}">{{ date }}</time></dd>
+        </div>
+      {%- endif -%}
+      {%- if tags -%}
+        <div class="Note-meta">
+          <dt>Tags:</dt>
+          <dd>
+            <ul class="Note-tags">
+              {%- for tag in tags -%}
+                <li>
+                  {%- assign tagUrl = "/tags/" | append: tag | append: "/" -%}
+                  {%- if page.url == tagUrl -%}
+                    <span class="Note-tag">{{ tag }}</span>
+                  {%- else -%}
+                    <a class="Note-tag" href="/tags/{{ tag }}">{{ tag }}</a>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </dd>
+        </div>
+      {%- endif -%}
+    </dl>
+  {%- endif -%}
+  
+  {{ content }}
+  
+  {%- if source -%}
+    <footer>
+      <p>
+        <small>
+          <b>Source:</b> <a href="{{ source }}">{{ source }}</a>
+        </small>
+      </p>
+    </footer>
   {%- endif -%}
 </article>

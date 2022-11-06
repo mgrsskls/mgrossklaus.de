@@ -1,5 +1,7 @@
 @import "./about.css";
 @import "./code.css";
+@import "./note.css";
+@import "./tags.css";
 
 * {
   box-sizing: border-box;
@@ -84,35 +86,10 @@ img {
   padding-inline-start: 0;
 }
 
-.Notes-item + .Notes-item {
+.Notes-item {
   margin-block-start: 3rem;
   border-block-start: 0.0625em solid var(--color-light);
   padding-block-start: 3rem;
-}
-
-.Note h2 {
-  margin-block: 0;
-}
-
-.Note-til + h2 {
-  margin-block-start: 0.5rem;
-}
-
-.Note-date {
-  display: block;
-  color: var(--color-secondary);
-}
-
-h2 + .Note-date {
-  margin-block-start: 0.5rem;
-}
-
-.Note-til {
-  background: var(--color-til-bg);
-  color: var(--color-til-text);
-  border-radius: 0.2em;
-  padding: 0.2em 0.5em;
-  font-size: 0.875em;
 }
 
 @media (min-width: 48.0625em) {

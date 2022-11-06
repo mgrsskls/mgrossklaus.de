@@ -1,0 +1,40 @@
+<ul class="Tags">
+  <li>
+    {%- if page.url == "/" -%}
+      <span class="Tag">all</span>
+    {%- else -%}
+      <a class="Tag" href="/">all</a>
+    {%- endif -%}
+  </li>
+  {%- for tag in collections.tagList -%}
+    <li>
+      {%- assign url = "/tags/" | append: tag | append: "/" -%}
+      {%- if page.url == url -%}
+        <span class="Tag">{{ tag }}</span>
+      {%- else -%}
+        <a class="Tag" href="/tags/{{ tag }}">{{ tag }}</a>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>
+
+<ol class="Notes" role="list">
+  {%- for note in notes reversed -%}
+    <li class="Notes-item">
+      {% unless note.data.blog %}
+        {% assign content = note.templateContent %}
+      {% else %}
+        {% assign content = null %}
+      {% endunless %}
+      {% include "./_note.html"
+        tags: note.data.tags,
+        til: note.data.til,
+        date: note.date,
+        title: note.data.title,
+        content: content,
+        url: note.url,
+        source: note.data.source
+      %}
+    </li>
+  {%- endfor -%}
+</ol>

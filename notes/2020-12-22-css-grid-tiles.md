@@ -1,5 +1,8 @@
 ---
 title: CSS Grid tiles
+tags:
+  - grid
+  - css
 ---
 
 I can never remember this snippet:

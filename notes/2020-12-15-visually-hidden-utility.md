@@ -1,6 +1,9 @@
 ---
 title: Utility class for hiding elements visually
 source: https://allyjs.io/tutorials/hiding-elements.html#2017-edition-of-visuallyhidden
+tags:
+  - accessibility
+  - css
 ---
 
 Hiding elements visually, but keeping them for screen readers:

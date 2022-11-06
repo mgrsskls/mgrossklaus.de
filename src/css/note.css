@@ -1,0 +1,63 @@
+.Note h2 {
+  margin-block: 0;
+}
+
+.Note-til + h2 {
+  margin-block-start: 0.5rem;
+}
+
+.Note-til {
+  background: var(--color-til-bg);
+  color: var(--color-til-text);
+  border-radius: 0.2em;
+  padding: 0.2em 0.5em;
+  font-size: 0.875em;
+}
+
+.Note-metaWrapper {
+  display: flex;
+  gap: 0.5em;
+  margin-block-start: 0.5rem;
+}
+
+.Note-metaWrapper > *:not(:last-child)::after {
+  content: "·";
+  padding-inline-start: 0.5em;
+}
+
+.Note-meta {
+  display: flex;
+  font-size: 0.875em;
+}
+
+.Note-meta dt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.Note-meta dd {
+  color: var(--color-secondary);
+}
+
+.Note-tags {
+  display: flex;
+  gap: 0.25em;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.Note-tags > *:not(:last-child)::after {
+  content: ",";
+}
+
+.Note-tag {
+  color: inherit;
+}

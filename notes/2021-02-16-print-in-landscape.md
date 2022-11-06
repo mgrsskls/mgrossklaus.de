@@ -1,6 +1,9 @@
 ---
 title: Print in landscape
 source: https://twitter.com/mmatuzo/status/1361698055385399304
+tags:
+  - css
+  - print
 ---
 
 ```css

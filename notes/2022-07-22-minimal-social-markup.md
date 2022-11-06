@@ -1,6 +1,8 @@
 ---
 title: Minimal social markup
 source: https://meiert.com/en/blog/minimal-social-markup/
+tags:
+  - html
 ---
 
 ```html

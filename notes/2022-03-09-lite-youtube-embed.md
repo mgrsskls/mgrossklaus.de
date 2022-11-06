@@ -1,5 +1,7 @@
 ---
 title: Lite youtube embed
+tags:
+  - performance
 ---
 
 Youtube embeds are not very performant, so here is a web component with focus on performance:

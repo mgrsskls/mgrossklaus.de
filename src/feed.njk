@@ -20,11 +20,11 @@ layout: null
     <email>{{ metadata.author.email }}</email>
   </author>
   <updated>{{
-    collections.posts | getNewestCollectionItemDate | dateToRfc3339
+    collections.notes | getNewestCollectionItemDate | dateToRfc3339
   }}</updated>
   <id>{{ metadata.url }}</id>
 
-  {%- for post in collections.posts | reverse %} {%- set absolutePostUrl =
+  {%- for post in collections.notes | reverse %} {%- set absolutePostUrl =
   post.url | absoluteUrl(metadata.url) %}
   <entry>
     <title>{{ post.data.title }}</title>

@@ -1,5 +1,8 @@
 ---
 title: SVGs in high contrast mode
+tags:
+  - accessibility
+  - svg
 ---
 
 ```css

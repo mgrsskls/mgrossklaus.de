@@ -1,5 +1,7 @@
 ---
 title: Dynamic search results for screen readers
+tags:
+  - accessibility
 ---
 
 This to consider for screen readers when implementing dynamic search results:

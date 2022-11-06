@@ -1,5 +1,8 @@
 ---
 title: Numbers with same width
+tags:
+  - typography
+  - css
 ---
 
 With the following CSS we can make sure that numbers are all rendered using the same width (similar to monospaced fonts):

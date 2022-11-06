@@ -1,0 +1,10 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+eleventyExcludeFromCollections: true
+---
+
+{%- include "./_notes.html" notes: collections[tag] -%}

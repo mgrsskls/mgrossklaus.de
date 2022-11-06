@@ -1,5 +1,7 @@
 ---
 title: Accessibility outline bookmarklet
+tags:
+  - accessibility
 ---
 
 Quickly analyze landmarks, headings and links of a website:

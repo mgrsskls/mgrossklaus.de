@@ -1,6 +1,9 @@
 ---
 title: Order in the head
 source: https://twitter.com/smashingmag/status/1440697011985018881
+tags:
+  - performance
+  - html
 ---
 
 ```html
