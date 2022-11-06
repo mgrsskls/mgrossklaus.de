@@ -1,3 +1,5 @@
+const htmlmin = require("html-minifier");
+
 const plugins = [
   require("@11ty/eleventy-plugin-rss"),
   require("@11ty/eleventy-plugin-syntaxhighlight"),
@@ -17,6 +19,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("isoString", (date) => date.toISOString());
 
   plugins.forEach((plugin) => eleventyConfig.addPlugin(plugin));
+
+  eleventyConfig.addTransform("htmlmin", function (content) {
+    if (this.outputPath && this.outputPath.endsWith(".html")) {
+      return htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      });
+    }
+
+    return content;
+  });
 
   return {
     dir: {
