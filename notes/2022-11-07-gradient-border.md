@@ -2,6 +2,7 @@
 title: Gradient border
 tags:
   - css
+source: https://twitter.com/argyleink/status/1589657198766231552
 ---
 
 **Without rounded corners:**
