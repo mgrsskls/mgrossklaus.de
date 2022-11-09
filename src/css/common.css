@@ -14,16 +14,17 @@ html {
   --color-heading: #134159;
   --color-secondary: #767676;
   --color-light: #eee;
-  --color-link: rgb(153, 16, 106);
+  --color-link: hsl(321deg 81% 33%);
   --color-about-divider: hsl(203.5, 40.4%, 30%);
   --color-about-link: hsl(200.9, 27.9%, 75%);
+  --color-about-code: hsl(201deg 28% 52%);
 
   --color-dark-bg: hsl(203.5, 40.4%, 12%);
   --color-dark-bg2: hsl(203.5, 40.4%, 10%);
   --color-dark-bg-code: hsl(203.5, 40.4%, 12%);
   --color-dark-text: #eee;
-  --color-dark-heading: #618ea6;
-  --color-dark-secondary: #788395;
+  --color-dark-heading: hsl(201deg 28% 52%);
+  --color-dark-secondary: hsl(217deg 12% 53%);
   --color-dark-light: rgba(255, 255, 255, 0.1);
   --color-dark-link: rgb(176, 118, 155);
 }
@@ -146,6 +147,31 @@ blockquote::before {
     --color-light: var(--color-dark-light);
     --color-link: var(--color-dark-link);
     --color-about-divider: var(--color-dark-til-bg);
+  }
+}
+
+@media (prefers-contrast: less) {
+  html {
+    --color-bg: #eee;
+  }
+
+  .Section--about {
+    --color-text: hsl(200.9, 27.9%, 75%);
+  }
+}
+
+@media (prefers-contrast: more) {
+  html {
+    --color-text: #000;
+    --color-secondary: #000;
+    --color-link: hsl(321deg 81% 25%);
+
+    --color-dark-text: #fff;
+    --color-dark-heading: hsl(201deg 28% 75%);
+    --color-dark-light: rgba(255, 255, 255, 0.1);
+    --color-dark-secondary: hsl(217deg 12% 75%);
+    --color-dark-link: hsl(322deg 27% 75%);
+    --color-about-code: hsl(201deg 28% 75%);
   }
 }
 
