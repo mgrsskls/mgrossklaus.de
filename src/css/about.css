@@ -9,8 +9,28 @@
   color-scheme: dark;
 }
 
+.About > *:last-child {
+  margin-block-end: 0;
+}
+
 .About-img {
   aspect-ratio: 1/1;
+}
+
+.About-code {
+  border-block-start: 0.0625em dotted var(--color-about-divider);
+  color: var(--color-dark-heading);
+  padding-block-start: 1.5rem;
+}
+
+.About-code a {
+  color: var(--color-about-link);
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1;
+  margin-block-end: 0;
 }
 
 dt {

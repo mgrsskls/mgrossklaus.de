@@ -15,8 +15,8 @@ html {
   --color-secondary: #767676;
   --color-light: #eee;
   --color-link: rgb(153, 16, 106);
-  --color-til-bg: hsl(203.5, 40.4%, 30%);
-  --color-til-text: #fff;
+  --color-about-divider: hsl(203.5, 40.4%, 30%);
+  --color-about-link: hsl(200.9, 27.9%, 75%);
 
   --color-dark-bg: hsl(203.5, 40.4%, 12%);
   --color-dark-bg2: hsl(203.5, 40.4%, 10%);
@@ -26,8 +26,7 @@ html {
   --color-dark-secondary: #788395;
   --color-dark-light: rgba(255, 255, 255, 0.1);
   --color-dark-link: rgb(176, 118, 155);
-  --color-dark-til-bg: #618ea6;
-  --color-dark-til-text: #fff;
+  --color-dark-about-divider: #618ea6;
 }
 
 body {
@@ -44,11 +43,6 @@ h4,
 h5,
 h6 {
   color: var(--color-heading);
-}
-
-h1 {
-  font-size: 2rem;
-  line-height: 1;
 }
 
 h2 {
@@ -152,8 +146,7 @@ blockquote::before {
     --color-secondary: var(--color-dark-secondary);
     --color-light: var(--color-dark-light);
     --color-link: var(--color-dark-link);
-    --color-til-bg: var(--color-dark-til-bg);
-    --color-til-text: var(--color-dark-til-text);
+    --color-about-divider: var(--color-dark-til-bg);
   }
 }
 
