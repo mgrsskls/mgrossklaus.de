@@ -8,6 +8,7 @@
 }
 
 .Tag {
+  display: inline-block;
   font-size: 0.875em;
   padding: 0.25em 0.5em;
   text-decoration: none;

@@ -43,4 +43,11 @@
 
 .Note-tag {
   color: inherit;
+  padding: 0.5em 1em;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .Note-metaWrapper {
+    margin-block-start: 1rem;
+  }
 }
