@@ -1,10 +1,12 @@
 <article class="Note">
-  {%- if til -%}
-    <span class="Note-til">Today I learned</span>
-  {%- endif -%}
   
   {%- if title -%}
-    <h2>
+  <h2>
+      {%- if til -%}
+        <span class="Note-til">
+          Today I learned<span class="u-hiddenVisually">:</span>
+        </span>
+      {%- endif -%}
       {%- if url -%}<a href="{{ url }}">{%- endif -%}
         {{ title }}
       {%- if url -%}</a>{%- endif -%}
@@ -15,13 +17,13 @@
     <dl class="Note-metaWrapper">
       {%- if date -%}
         <div class="Note-meta">
-          <dt>Date:</dt>
+          <dt class="u-hiddenVisually">Date:</dt>
           <dd><time datetime="{% isoString date %}">{{ date }}</time></dd>
         </div>
       {%- endif -%}
       {%- if tags -%}
         <div class="Note-meta">
-          <dt>Tags:</dt>
+          <dt class="u-hiddenVisually">Tags:</dt>
           <dd>
             <ul class="Note-tags">
               {%- for tag in tags -%}
