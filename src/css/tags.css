@@ -25,6 +25,6 @@ a.Tag:hover {
 }
 
 span.Tag {
-  color: #fff;
+  color: var(--color-tag-active);
   background: var(--color-heading);
 }

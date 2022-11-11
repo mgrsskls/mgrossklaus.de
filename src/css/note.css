@@ -11,18 +11,24 @@
 
 .Note-metaWrapper {
   display: flex;
-  gap: 0.5em;
   margin-block-start: 0.5rem;
-}
-
-.Note-metaWrapper > *:not(:last-child)::after {
-  content: "·";
-  padding-inline-start: 0.5em;
 }
 
 .Note-meta {
   display: flex;
   font-size: 0.875em;
+}
+
+.Note-meta:not(:last-child)::after {
+  content: "";
+  display: block;
+  background: var(--color-secondary);
+  block-size: 1em;
+  inline-size: 0.0625em;
+  margin-inline-start: 0.75em;
+  transform: translateY(-50%);
+  position: relative;
+  inset-block-start: 50%;
 }
 
 .Note-meta dd {
@@ -31,19 +37,18 @@
 
 .Note-tags {
   display: flex;
-  gap: 0.25em;
   list-style: none;
   padding-inline-start: 0;
   margin: 0;
 }
 
-.Note-tags > *:not(:last-child)::after {
-  content: ",";
+.Note-tagsItem:not(:last-child)::after {
+  content: "·";
 }
 
 .Note-tag {
   color: inherit;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.75em;
 }
 
 @media (hover: none) and (pointer: coarse) {

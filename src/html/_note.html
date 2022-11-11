@@ -27,7 +27,7 @@
           <dd>
             <ul class="Note-tags">
               {%- for tag in tags -%}
-                <li>
+                <li class="Note-tagsItem">
                   {%- assign tagUrl = "/tags/" | append: tag | append: "/" -%}
                   {%- if page.url == tagUrl -%}
                     <span class="Note-tag">{{ tag }}</span>
