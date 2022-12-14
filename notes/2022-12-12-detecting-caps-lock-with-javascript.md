@@ -1,5 +1,5 @@
 ---
-title: Detecing capslock with JavaScript
+title: Detecting capslock with JavaScript
 tags:
   - javascript
 source: https://iamkate.com/code/caps-lock/
