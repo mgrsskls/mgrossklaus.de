@@ -1,3 +1,6 @@
 _site/
 dist/
 node_modules/
+notes/private
+notes/.sync_*
+.obsidian/

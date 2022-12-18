@@ -5,6 +5,7 @@ pagination:
   alias: tag
 permalink: /tags/{{ tag }}/
 eleventyExcludeFromCollections: true
+layout: layout.html
 ---
 
 {%- include "./_notes.html" notes: collections[tag] -%}

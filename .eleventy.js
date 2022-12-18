@@ -6,14 +6,11 @@ const plugins = [
 ];
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "dist/css/*": "css" });
-  eleventyConfig.addPassthroughCopy({ "src/img": "img" });
-  eleventyConfig.addPassthroughCopy("notes/**/*.png");
-
-  eleventyConfig.addGlobalData("layout", "layout.html");
+  eleventyConfig.addPassthroughCopy({ "dist/css/*": "css", "src/img": "img" });
+  eleventyConfig.addPassthroughCopy("src/notes/**/*.png");
 
   eleventyConfig.addCollection("notes", function (collection) {
-    return collection.getFilteredByGlob(["notes/*.md"]);
+    return collection.getFilteredByGlob(["src/notes/*.md"]);
   });
   eleventyConfig.addCollection("tagList", function (collection) {
     const tagSet = new Set();
@@ -49,7 +46,8 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      includes: "src/html",
+      input: "src",
+      includes: "html",
     },
   };
 };
