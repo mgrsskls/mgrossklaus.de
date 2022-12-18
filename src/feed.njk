@@ -33,8 +33,12 @@ metadata:
     <content
       xml:lang="{{ metadata.language }}"
       type="html"
-      >{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content
     >
+      {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
+      {%- if post.data.source -%}
+        {{ '<p>Source: <a href="' ~ post.data.source ~ '">' ~ post.data.source ~ '</a></p>' }}
+      {%- endif -%}
+    </content>
   </entry>
   {%- endfor %}
 </feed>
