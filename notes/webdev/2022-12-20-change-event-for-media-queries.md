@@ -1,5 +1,5 @@
 ---
-title: `change` event for media queries
+title: "change" event for media queries
 tags:
   - javascript
 til: true
