@@ -23,11 +23,13 @@
 <ol class="Notes" role="list">
   {%- for note in notes reversed -%}
     <li class="Notes-item">
-      {% unless note.data.blog %}
-        {% assign content = note.templateContent %}
+      {% if note.data.blog %}
+        {% capture content %}
+          <p>{{ note.data.excerpt }}</p>
+        {% endcapture %}
       {% else %}
-        {% assign content = null %}
-      {% endunless %}
+        {% assign content = note.templateContent %}
+      {% endif %}
       {% include "./_note.html"
         content: content,
         date: note.date,

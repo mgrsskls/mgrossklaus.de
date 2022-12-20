@@ -1,3 +1,10 @@
+const fs = require("fs");
+const path = require("path");
+const markdownIt = require("markdown-it");
+const markdownItFrontMatter = require("markdown-it-front-matter");
+
+const MD = markdownIt({ html: true }).use(markdownItFrontMatter, () => {});
+
 module.exports = {
   permalink(data) {
     if (data.permalink) return data.permalink;
@@ -24,5 +31,23 @@ module.exports = {
   },
   isNote(data) {
     return data.layout === "note.html";
+  },
+  excerpt(data) {
+    if (!data.blog) return null;
+
+    const fileContent = fs.readFileSync(
+      path.join(process.cwd(), data.page.inputPath),
+      "utf8"
+    );
+    const tokens = MD.parse(fileContent, {});
+
+    const indexOpeningTag = tokens.findIndex(
+      ({ type, tag }) => type === "paragraph_open" && tag === "p"
+    );
+
+    if (indexOpeningTag < 0) return null;
+    if (!tokens[indexOpeningTag + 1]?.content) return null;
+
+    return MD.render(tokens[indexOpeningTag + 1].content);
   },
 };
