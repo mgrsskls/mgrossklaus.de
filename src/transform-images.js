@@ -96,6 +96,7 @@ async function getImageHTML({ imageSrc, attrs, outputDir, inputDir }) {
           src="${lowsrc.url}"
           width="${highsrc.width}"
           height="${highsrc.height}"
+          style="aspect-ratio: ${highsrc.width} / ${highsrc.height}"
           ${attrStr}
         >
       </picture>`;
