@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Michael Großklaus</title>
+    <title>{{ title }}</title>
     <link href="/css/common.css" rel="stylesheet" />
     <link
       rel="alternate"
@@ -31,7 +31,11 @@
             class="About-img"
           />
         </picture>
-        <h1>Michael Großklaus</h1>
+        {% if isNote %}
+        <p class="About-name">Michael Großklaus</p>
+        {% else %}
+        <h1 class="About-name">Michael Großklaus</h1>
+        {% endif %}
         <p>
           Doing frontend things at
           <a href="https://factorial.io">factorial.io</a> and created

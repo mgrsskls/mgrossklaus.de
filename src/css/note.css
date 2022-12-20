@@ -1,4 +1,9 @@
-.Note h2 {
+.Note h1 {
+  font-size: 2em;
+}
+
+.Note :is(h1, h2) {
+  line-height: 1.2;
   margin-block: 0;
 }
 

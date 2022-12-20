@@ -1,7 +1,11 @@
 <article class="Note">
-  
+
   {%- if title -%}
-  <h2>
+    {% if isNote %}
+      <h1>
+    {% else %}
+      <h2>
+    {% endif %}
       {%- if til -%}
         <span class="Note-til">
           Today I learned<span class="u-hiddenVisually">:</span>
@@ -10,9 +14,13 @@
       {%- if url -%}<a href="{{ url }}">{%- endif -%}
         {{ title }}
       {%- if url -%}</a>{%- endif -%}
-    </h2>
+    {% if isNote %}
+      </h1>
+    {% else %}
+      </h2>
+    {% endif %}
   {%- endif -%}
-  
+
   {%- if date or tags -%}
     <dl class="Note-metaWrapper">
       {%- if date -%}
@@ -42,9 +50,9 @@
       {%- endif -%}
     </dl>
   {%- endif -%}
-  
+
   {{ content }}
-  
+
   {%- if source -%}
     <footer>
       <p>

@@ -47,10 +47,6 @@ h6 {
   color: var(--color-heading);
 }
 
-h2 {
-  line-height: 1.2;
-}
-
 a {
   color: var(--color-link);
   overflow-wrap: break-word;

@@ -27,10 +27,12 @@
   color: var(--color-about-link);
 }
 
-h1 {
+.About-name {
+  color: var(--color-heading);
   font-size: 2rem;
+  font-weight: bold;
   line-height: 1;
-  margin-block-end: 0;
+  margin-block: 1em 0;
 }
 
 dt {

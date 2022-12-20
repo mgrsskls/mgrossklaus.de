@@ -12,13 +12,13 @@ That is just one example for why I came up with my own way of organizing my comp
 
 Of course, this is an ongoing process and every project is different, but I basically follow these rules:
 
-### Which directories should I use?
+## Which directories should I use?
 
 - <b>templates</b><br>The actual page templates.
 - <b>content</b><br>Content components, which can be picked by the editors to fill pages with content.
 - <b>components</b><br>All the remaining components that should not be used directly by editors (usually something like icons, buttons, etc.).
 
-### When should I create a new component?
+## When should I create a new component?
 
 1. <b>When using code in multiple components.</b><br>As soon as you use the same code (or slight variations of it) multiple times, make a component out of it.
 2. <b>When rendering entries of a collection.</b><br>If you render a collection, put the code for the entries (e.g. a teaser in a teaser list) in a separate component.
@@ -26,15 +26,15 @@ Of course, this is an ongoing process and every project is different, but I basi
 
 While the first rule is essential to avoid code duplication, the second and third rule are basically only for reducing the complexity of a component. In that case, I would call the components "sub components".
 
-### Where should I put my sub components?
+## Where should I put my sub components?
 
 <b>In a directory in its parent component.</b> As you are not using these components anywhere else, you can "scope" them by putting them in a sub directory of the actual component. This couples them tightly together and you can find all the code where you expect it.
 
-### What about components that are only used for templates?
+## What about components that are only used for templates?
 
 Components, that are used by multiple templates and only by templates (e.g. header, footer, navigation), live in a subdirectory called `_includes/` in the `templates/` directory. I prefix the name of this directory with `_` to show that it is some sort of a helper directory and not a template.
 
-### Example
+## Example
 
 The structure for an example project could look like this:
 
