@@ -19,7 +19,7 @@ module.exports = function transformImages(
         promises.push(
           new Promise((resolve) => {
             getImageHTML({
-              imageSrc: path.join(inputDir, image.src),
+              imageSrc: path.join(process.cwd(), inputDir, "notes", image.src),
               attrs: image.attributes,
               outputDir,
               inputDir,
