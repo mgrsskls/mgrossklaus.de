@@ -17,7 +17,7 @@
     />
   </head>
   <body>
-    <section class="Section Section--about">
+    <header class="Section Section--about">
       <div class="About">
         <picture>
           <source srcset="/img/me-x2.avif" type="image/avif" />
@@ -32,7 +32,7 @@
           />
         </picture>
         {% if isNote %}
-        <p class="About-name">Michael Großklaus</p>
+        <a href="/" class="About-name">Michael Großklaus</a>
         {% else %}
         <h1 class="About-name">Michael Großklaus</h1>
         {% endif %}
@@ -62,10 +62,10 @@
           </small>
         </p>
       </div>
-    </section>
-    <section class="Section Section--content">
+    </header>
+    <main class="Section Section--content">
       <div class="Content">{{ content }}</div>
-    </section>
+    </main>
     <script>
       document.querySelectorAll("time").forEach((time) => {
         time.textContent = new Date(time.dateTime).toLocaleDateString();

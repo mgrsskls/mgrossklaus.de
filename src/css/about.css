@@ -28,11 +28,17 @@
 }
 
 .About-name {
+  display: inline-block;
   color: var(--color-heading);
   font-size: 2rem;
   font-weight: bold;
   line-height: 1;
   margin-block: 1em 0;
+  text-decoration: none;
+}
+
+a.About-name:hover {
+  text-decoration: underline;
 }
 
 dt {
