@@ -5,12 +5,17 @@ const plugins = [
   require("@11ty/eleventy-plugin-syntaxhighlight"),
 ];
 
+const transformImages = require("./src/transform-images");
+
 module.exports = function (eleventyConfig) {
+  const input = "src";
+  const output = "_site";
+
   eleventyConfig.addPassthroughCopy({ "dist/css/*": "css", "src/img": "img" });
-  eleventyConfig.addPassthroughCopy("src/notes/**/*.png");
+  eleventyConfig.addPassthroughCopy(`${input}/notes/**/*.png`);
 
   eleventyConfig.addCollection("notes", function (collection) {
-    return collection.getFilteredByGlob(["src/notes/*.md"]);
+    return collection.getFilteredByGlob([`${input}/notes/*.md`]);
   });
   eleventyConfig.addCollection("tagList", function (collection) {
     const tagSet = new Set();
@@ -32,6 +37,9 @@ module.exports = function (eleventyConfig) {
 
   plugins.forEach((plugin) => eleventyConfig.addPlugin(plugin));
 
+  eleventyConfig.addTransform("transformImages", (content, outputPath) =>
+    transformImages(content, outputPath, output, input)
+  );
   eleventyConfig.addTransform("htmlmin", function (content) {
     if (this.outputPath && this.outputPath.endsWith(".html")) {
       return htmlmin.minify(content, {
@@ -46,7 +54,8 @@ module.exports = function (eleventyConfig) {
 
   return {
     dir: {
-      input: "src",
+      input,
+      output,
       includes: "html",
     },
   };
