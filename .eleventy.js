@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(`${input}/notes/**/*.png`);
 
   eleventyConfig.addCollection("notes", function (collection) {
-    return collection.getFilteredByGlob([`${input}/notes/*.md`]);
+    return collection.getFilteredByGlob([`${input}/notes/**/*.md`]);
   });
   eleventyConfig.addCollection("tagList", function (collection) {
     const tagSet = new Set();

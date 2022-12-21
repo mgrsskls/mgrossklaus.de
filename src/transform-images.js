@@ -16,10 +16,17 @@ module.exports = function transformImages(
 
     document.querySelectorAll("article img").forEach(async (image) => {
       if (image.src.endsWith(".jpg") || image.src.endsWith(".png")) {
+        const articlePath = image.closest("article").dataset.url;
         promises.push(
           new Promise((resolve) => {
             getImageHTML({
-              imageSrc: path.join(process.cwd(), inputDir, "notes", image.src),
+              imageSrc: articlePath
+                ? path.join(process.cwd(), inputDir, articlePath, image.src)
+                : path.join(
+                    process.cwd(),
+                    path.dirname(filePath.replace(outputDir, inputDir)),
+                    image.src
+                  ),
               attrs: image.attributes,
               outputDir,
               inputDir,

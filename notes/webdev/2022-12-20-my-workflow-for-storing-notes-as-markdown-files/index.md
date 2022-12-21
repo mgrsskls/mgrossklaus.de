@@ -18,7 +18,7 @@ The reason I want them to be stored on my computer is independence: I don't want
 
 What I was missing until now was a tool for macOS that makes it easy to create and read my notes — until I stumbled upon [Obsidian](https://obsidian.md). While I am not super fond of its UI (it looks a little bit too techy for me), it did almost everything out of the box the way I wanted it to. Unfortunately it is not open source, but it has a very big amount of community plugins. The small things that were not possible with Obsidian's core plugins, were easy to do with their community plugins: for example keeping the file name in sync with the first heading in a Markdown file ([Filename Heading Sync](https://github.com/dvcrn/obsidian-filename-heading-sync)).
 
-![Screenshot of my notes in the Obsidian app](./2022-12-20-my-workflow-for-storing-notes-as-markdown-files/obsidian.png)
+![Screenshot of my notes in the Obsidian app](./obsidian.png)
 
 ## Using private and public notes together
 
@@ -33,7 +33,7 @@ Now I have one application that gives me all my notes, private and public, and a
 
 The way I usually publish notes on this website is through GitHub directly: The GitHub Web UI allows you to create files and commit them in one go. This is super convenient as I don't have to open my editor, create a file, commit and then push it. Instead I bookmarked the URL for creating a new file in the correct directory (_https://github.com/mgrsskls/mgrossklaus.de/new/main/notes/webdev_ in my case), which brings me directly to GitHub's file editor. And as most of the notes I write are Markdown files without any additional files (images for example), using the GitHub Web UI is totally sufficient in most cases.
 
-![Screenshot of the GitHub Web UI when creating a new note](./2022-12-20-my-workflow-for-storing-notes-as-markdown-files/github.png)
+![Screenshot of the GitHub Web UI when creating a new note](./github.png)
 
 ## Pulling notes from the repository
 

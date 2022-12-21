@@ -5,4 +5,4 @@ tags:
   - ux
 ---
 
-![Example of a good error message showing the different parts of it](./2022-10-18-better-error-messages/better-error-message.png)
+![Example of a good error message showing the different parts of it](./better-error-message.png)
