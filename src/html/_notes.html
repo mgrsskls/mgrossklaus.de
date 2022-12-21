@@ -14,7 +14,7 @@
       {%- if page.url == url -%}
         <span class="Tag">{{ tag }}</span>
       {%- else -%}
-        <a class="Tag" href="/tags/{{ tag }}">{{ tag }}</a>
+        <a class="Tag" href="/tags/{{ tag }}" rel="tag">{{ tag }}</a>
       {%- endif -%}
     </li>
   {%- endfor -%}

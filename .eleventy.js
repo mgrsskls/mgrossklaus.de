@@ -11,7 +11,11 @@ module.exports = function (eleventyConfig) {
   const input = "src";
   const output = "_site";
 
-  eleventyConfig.addPassthroughCopy({ "dist/css/*": "css", "src/img": "img" });
+  eleventyConfig.addPassthroughCopy({
+    "dist/css/*": "css",
+    "src/img": "img",
+    "src/favicons": "/",
+  });
   eleventyConfig.addPassthroughCopy(`${input}/notes/**/*.png`);
 
   eleventyConfig.addCollection("notes", function (collection) {

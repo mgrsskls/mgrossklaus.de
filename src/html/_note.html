@@ -11,7 +11,7 @@
           Today I learned<span class="u-hiddenVisually">:</span>
         </span>
       {%- endif -%}
-      {%- if url -%}<a href="{{ url }}">{%- endif -%}
+      {%- if url -%}<a href="{{ url }}" rel="bookmark">{%- endif -%}
         {{ title }}
       {%- if url -%}</a>{%- endif -%}
     {% if isNote %}
@@ -40,7 +40,7 @@
                   {%- if page.url == tagUrl -%}
                     <span class="Note-tag">{{ tag }}</span>
                   {%- else -%}
-                    <a class="Note-tag" href="/tags/{{ tag }}">{{ tag }}</a>
+                    <a class="Note-tag" href="/tags/{{ tag }}" rel="tag">{{ tag }}</a>
                   {%- endif -%}
                 </li>
               {%- endfor -%}
