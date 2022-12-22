@@ -1,5 +1,7 @@
 {% if isDetailView %}
-  <script src="/js/web-mentions.js" defer></script>
+  <p class="BackLink">
+    <a class="BackLink-link" href="/">Home</a>
+  </p>
 {% endif %}
 
 <article class="Note" data-url="{{ url }}">
@@ -12,17 +14,17 @@
       <div class="Note-title">
         {% if isNote %}
           {% assign headingTag = "h1" %}
-          {% else %}
+        {% else %}
           {% assign headingTag = "h2" %}
         {% endif %}
         <{{headingTag}}>
           {% if til %}
             <abbr class="Note-til" title="Today I learned">TIL: </abbr>
           {% endif %}
-          {% if url %}
-            <a href="{{ url }}" rel="bookmark">{{ title }}</a>
-          {% else %}
+          {% if isDetailView %}
             {{ title }}
+          {% else %}
+            <a href="{{ url }}" rel="bookmark">{{ title }}</a>
           {% endif %}
         </{{headingTag}}>
       </div>
@@ -52,4 +54,6 @@
   </footer>
 </article>
 
-<mg-webmentions path="{{ path }}"></mg-webmentions>
+{% if isDetailView %}
+  <mg-webmentions path="{{ path }}"></mg-webmentions>
+{% endif %}
