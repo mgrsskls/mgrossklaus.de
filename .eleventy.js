@@ -16,11 +16,15 @@ module.exports = function (eleventyConfig) {
 
   /* Passthrough Copy */
   eleventyConfig.addPassthroughCopy({
-    "dist/css/*": "css",
     "src/img": "img",
     "src/favicons": "/",
     "src/js": "js",
   });
+  eleventyConfig.addPassthroughCopy(
+    process.env.NODE_ENV === "production"
+      ? { "dist/css/*": "css" }
+      : { "src/css": "css" }
+  );
   eleventyConfig.addPassthroughCopy(`${input}/notes/**/*.png`);
 
   /* Collections */
