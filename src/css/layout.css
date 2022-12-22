@@ -1,0 +1,18 @@
+@media (min-width: 48.0625em) {
+  body {
+    display: grid;
+    grid-template-columns: 38.2% 61.8%;
+  }
+
+  .Section--about {
+    position: sticky;
+    inset-block-start: 0;
+    block-size: 100vh;
+    overflow-y: auto;
+  }
+
+  .Content {
+    max-inline-size: 48em;
+    min-block-size: 100%;
+  }
+}

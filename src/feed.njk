@@ -22,7 +22,7 @@ metadata:
   }}</updated>
   <id>{{ origin }}</id>
 
-  {%- for post in collections.notes | reverse %} {%- set absolutePostUrl =
+  {% for post in collections.notes | reverse %} {% set absolutePostUrl =
   post.url | absoluteUrl(origin) %}
   <entry>
     <title>{{ post.data.title }}</title>
@@ -34,10 +34,10 @@ metadata:
       type="html"
     >
       {{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}
-      {%- if post.data.source -%}
+      {% if post.data.source %}
         {{ '<p>Source: <a href="' ~ post.data.source ~ '">' ~ post.data.source ~ '</a></p>' }}
-      {%- endif -%}
+      {% endif %}
     </content>
   </entry>
-  {%- endfor %}
+  {% endfor %}
 </feed>

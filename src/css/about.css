@@ -14,13 +14,14 @@
 }
 
 .About-img {
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
 }
 
 .About-code {
-  border-block-start: 0.0625em dotted var(--color-about-divider);
+  border-block-start: var(--divider) var(--color-about-divider);
   color: var(--color-about-code);
-  padding-block-start: 1.5rem;
+  padding-block-start: var(--spacing);
+  margin-block-start: var(--spacing);
 }
 
 .About-code a {
@@ -42,16 +43,20 @@
   text-decoration: underline;
 }
 
-dt {
+.About-links {
+  margin-block: var(--spacing);
+}
+
+.About-linkName {
   font-weight: bold;
   margin-inline-end: 0.5em;
 }
 
-dd {
+.About-linkValue {
   margin-inline-start: 0;
 }
 
-dd + dt {
+.About-linkValue + .About-linkName {
   margin-block-start: 1em;
 }
 
@@ -76,29 +81,23 @@ dd + dt {
   }
 
   .About-details {
-    border-block-start: 0.0625em solid var(--color-about-divider);
-    padding-block-start: 0.5rem;
-    margin-block-start: 1rem;
+    border-block-start: var(--divider) var(--color-about-divider);
+    padding-block-start: var(--spacing);
+    margin-block-start: var(--spacing);
+  }
+
+  .About-details[open] summary {
+    color: var(--color-secondary);
   }
 }
 
 @media (min-width: 48.0625em) {
-  .Section--about {
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    inset-block-start: 0;
-    block-size: 100vh;
-    overflow-y: auto;
-  }
-
   .About {
     display: flex;
     flex-direction: column;
     inline-size: 100%;
     max-inline-size: 36rem;
     margin-inline-start: auto;
-    flex: 1;
   }
 
   .About-name {

@@ -1,6 +1,6 @@
 .WebMentions {
   margin-block-start: var(--spacing);
-  border-block-start: 0.0625em solid var(--color-light);
+  border-block-start: var(--divider) var(--color-light);
   padding-block-start: var(--spacing);
 }
 
@@ -10,6 +10,7 @@
 
 .WebMentions-list {
   padding-inline-start: 0;
+  margin-block: 0;
 }
 
 .WebMentions-item {
@@ -39,11 +40,5 @@
 @media (max-width: 64em) {
   .WebMentions {
     --spacing: 2rem;
-  }
-}
-
-@media (min-width: 64.0625em) {
-  .WebMentions {
-    --spacing: 4rem;
   }
 }

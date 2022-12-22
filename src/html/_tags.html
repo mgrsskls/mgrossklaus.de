@@ -1,21 +1,21 @@
 <ul class="Tags">
-  {%- if showAll -%}
+  {% if showAll %}
     <li>
-      {%- if page.url == "/" -%}
-        <span class="Tag">all</span>
-      {%- else -%}
-        <a class="Tag" href="/">all</a>
-      {%- endif -%}
+      {% if page.url == "/" %}
+        <span class="Tag Tag--all">all</span>
+      {% else %}
+        <a class="Tag Tag--all" href="/">all</a>
+      {% endif %}
     </li>
-  {%- endif -%}
-  {%- for tag in tags -%}
+  {% endif %}
+  {% for tag in tags %}
     <li>
-      {%- assign url = "/tags/" | append: tag | append: "/" -%}
-      {%- if page.url == url -%}
+      {% assign url = "/tags/" | append: tag | append: "/" %}
+      {% if page.url == url %}
         <span class="Tag">{{ tag }}</span>
-      {%- else -%}
+      {% else %}
         <a class="Tag" href="/tags/{{ tag }}" rel="tag">{{ tag }}</a>
-      {%- endif -%}
+      {% endif %}
     </li>
-  {%- endfor -%}
+  {% endfor %}
 </ul>

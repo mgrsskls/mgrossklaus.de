@@ -4,7 +4,7 @@
 pre,
 :not(pre) > code {
   background: var(--color-bg-code);
-  border: 0.0625em solid var(--color-secondary);
+  border: 0.062em solid var(--color-secondary);
   border-radius: 0.2em;
 }
 

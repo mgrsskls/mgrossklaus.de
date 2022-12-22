@@ -16,7 +16,7 @@
   border-radius: 0.2em;
 }
 
-.Tag::before {
+.Tag:not(.Tag--all)::before {
   content: "#";
 }
 

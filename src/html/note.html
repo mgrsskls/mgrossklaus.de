@@ -2,5 +2,14 @@
 layout: layout.html
 ---
 
-{% include "./_note.html" content: content, date: page.date, source: source,
-til: til, title: title, webMentions: true, path: page.url %}
+{%
+  include "./_note.html"
+  content: content,
+  date: page.date,
+  isDetailView: true,
+  path: page.url,
+  source: source,
+  til: til,
+  title: title,
+  webMentions: true,
+%}

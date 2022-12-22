@@ -1,0 +1,69 @@
+<div class="About">
+  <div class="About-me">
+    <picture>
+      <source srcset="/img/me-x2.avif" type="image/avif">
+      <source srcset="/img/me-x2.webp" type="image/webp">
+      <img
+        src="/img/me-x2.jpg"
+        alt="Profile picture of Michael Großklaus"
+        width="200"
+        height="200"
+        fetchpriority="high"
+        class="About-img"
+      >
+    </picture>
+
+    {% if isNote %}
+      {% assign nameTag = "p" %}
+    {% else %}
+      {% assign nameTag = "h1" %}
+    {% endif %}
+    <{{nameTag}} class="About-name">
+      <a href="/" rel="me">Michael Großklaus</a>
+    </{{nameTag}}>
+  </div>
+
+  <details class="About-details">
+    <summary>About</summary>
+
+    <p>
+      Doing frontend things at <a href="https://factorial.io">factorial.io</a> and created <a href="https://miyagi.dev">miyagi.dev</a>.
+    </p>
+
+    <dl class="About-links">
+      <dt class="About-linkName">GitHub</dt>
+      <dd class="About-linkValue">
+        <a href="https://github.com/mgrsskls" rel="me">github.com/mgrsskls</a>
+      </dd>
+      <dt class="About-linkName">Mastodon</dt>
+      <dd class="About-linkValue">
+        <a href="https://indieweb.social/@mgrsskls" rel="me">indieweb.social/@mgrsskls</a>
+      </dd>
+      <dt class="About-linkName">RSS</dt>
+      <dd class="About-linkValue">
+        <a href="/feed.xml" rel="alternate" type="application/rss+xml">/feed.xml</a>
+      </dd>
+    </dl>
+
+    <p class="About-code">
+      <small>
+        Built with <a href="https://www.11ty.dev/">Eleventy</a> &amp; hosted on <a href="https://www.netlify.com/">Netlify</a>.
+      </small>
+    </p>
+  </details>
+</div>
+
+<script>
+  {
+    const mq = window.matchMedia("(max-width: 48em)");
+    const details = document.querySelector(".About-details");
+
+    if (details) {
+      details.open = !mq.matches;
+
+      mq.addEventListener("change", () => {
+        details.open = !mq.matches;
+      });
+    }
+  }
+</script>

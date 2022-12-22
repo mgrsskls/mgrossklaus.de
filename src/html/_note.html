@@ -1,40 +1,51 @@
+{% if isDetailView %}
+  <script src="/js/web-mentions.js" defer></script>
+{% endif %}
+
 <article class="Note" data-url="{{ url }}">
   <header>
-    {%- if date -%}
+    {% if date %}
       <time class="Note-date" datetime="{% isoString date %}">{{ date }}</time>
-    {%- endif -%}
+    {% endif %}
 
-    {%- if title -%}
+    {% if title %}
       <div class="Note-title">
-        {% if isNote %}<h1>{% else %}<h2>{% endif %}
-        {%- if til -%}
-          <abbr class="Note-til" title="Today I learned">TIL: </abbr>
-        {%- endif -%}
-        {%- if url -%}<a href="{{ url }}" rel="bookmark">{%- endif -%}
-          {{ title }}
-        {%- if url -%}</a>{%- endif -%}
-        {% if isNote %}</h1>{% else %}</h2>{% endif %}
+        {% if isNote %}
+          {% assign headingTag = "h1" %}
+          {% else %}
+          {% assign headingTag = "h2" %}
+        {% endif %}
+        <{{headingTag}}>
+          {% if til %}
+            <abbr class="Note-til" title="Today I learned">TIL: </abbr>
+          {% endif %}
+          {% if url %}
+            <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+          {% else %}
+            {{ title }}
+          {% endif %}
+        </{{headingTag}}>
       </div>
-    {%- endif -%}
+    {% endif %}
   </header>
 
   {{ content }}
 
   <footer>
-    {%- if source -%}
+    {% if source %}
       <p>
         <small>
           <b>Source:</b> <a href="{{ source }}">{{ source }}</a>
         </small>
       </p>
-    {%- endif -%}
+    {% endif %}
 
     <div class="u-flex u-spaceBetween u-gap">
-      {%- if tags -%}
+      {% if tags %}
       <div class="Note-tags">
-        {%- include "./_tags.html" tags: tags, showAll: false -%}
+        {% include "./_tags.html" tags: tags, showAll: false %}
       </div>
-      {%- endif -%}
+      {% endif %}
 
       <mg-share text="{{ title }}" url="{{ origin }}{{ url }}"></mg-share>
     </div>

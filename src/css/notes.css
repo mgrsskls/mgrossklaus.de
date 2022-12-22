@@ -1,0 +1,23 @@
+.Notes-intro {
+  margin-block: 0 var(--spacing);
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+.Notes-list {
+  list-style: none;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+}
+
+.Notes-item {
+  margin-block-start: var(--spacing);
+  border-block-start: var(--divider) var(--color-light);
+  padding-block-start: var(--spacing);
+}
+
+@media (max-width: 64em) {
+  .Notes-item {
+    --spacing: 2rem;
+  }
+}

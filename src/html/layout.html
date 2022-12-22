@@ -4,94 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
-    <link href="/css/common.css" rel="stylesheet" />
     <script src="/js/share.js" defer></script>
-    <script src="/js/web-mentions.js" defer></script>
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Michael Großklaus"
-      href="/feed.xml"
-    />
-    <meta
-      name="description"
-      content="Michael Großklaus is a Hamburg, Germany based frontend developer."
-    />
+    <link href="/css/common.css" rel="stylesheet" />
+    <link rel="alternate" type="application/rss+xml" title="Michael Großklaus" href="/feed.xml" />
+    <meta name="description" content="Michael Großklaus is a Hamburg, Germany based frontend developer." />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="webmention" href="https://webmention.io/www.mgrossklaus.de/webmention" />
     <link rel="pingback" href="https://webmention.io/www.mgrossklaus.de/xmlrpc" />
+    <noscript>
+      <style>
+        .About-details summary {
+          display: list-item;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <header class="Section Section--about">
-      <div class="About">
-        <div class="About-me">
-          <picture>
-            <source srcset="/img/me-x2.avif" type="image/avif" />
-            <source srcset="/img/me-x2.webp" type="image/webp" />
-            <img
-            src="/img/me-x2.jpg"
-            alt="Profile picture of Michael Großklaus"
-            width="300"
-            height="300"
-            fetchpriority="high"
-            class="About-img"
-            />
-          </picture>
-          {% if isNote %}
-          <p class="About-name">
-            <a href="/" rel="me">Michael Großklaus</a>
-          </p>
-          {% else %}
-          <h1 class="About-name">
-            <a href="/" rel="me">Michael Großklaus</a>
-          </h1>
-          {% endif %}
-        </div>
-        <details class="About-details">
-          <summary>About</summary>
-          <p>
-            Doing frontend things at
-            <a href="https://factorial.io">factorial.io</a> and created
-            <a href="https://miyagi.dev">miyagi.dev</a>.
-          </p>
-          <dl>
-            <dt>GitHub</dt>
-            <dd><a href="https://github.com/mgrsskls" rel="me">github.com/mgrsskls</a></dd>
-            <dt>Mastodon</dt>
-            <dd>
-              <a href="https://indieweb.social/@mgrsskls" rel="me">indieweb.social/@mgrsskls</a>
-            </dd>
-            <dt>RSS</dt>
-            <dd>
-              <a href="/feed.xml" rel="alternate" type="application/rss+xml">/feed.xml</a>
-            </dd>
-          </dl>
-          <p class="About-code">
-            <small>
-              Built with <a href="https://www.11ty.dev/">Eleventy</a> &amp; hosted
-              on <a href="https://www.netlify.com/">Netlify</a>.
-            </small>
-          </p>
-        </details>
-      </div>
-      <script>
-        {
-          const mq = window.matchMedia("(max-width: 48em)");
-          const about = document.querySelector(".About-details");
-
-          if (about) {
-            about.open = !mq.matches;
-            
-            mq.addEventListener("change", () => {
-              about.open = !mq.matches;
-            });
-          }
-        }
-      </script>
+      {% include "_about.html" %}
     </header>
     <main class="Section Section--content">
-      <div class="Content">{{ content }}</div>
+      <div class="Content">
+        {{ content }}
+      </div>
     </main>
     <script>
       document.querySelectorAll("time").forEach((time) => {

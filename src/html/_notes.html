@@ -1,26 +1,28 @@
-<p class="NotesIntro">Collecting some frontend related notes, thoughts, bookmarks and tips.</p>
+<div class="Notes">
+  <p class="Notes-intro">Collecting some frontend related notes, thoughts, bookmarks and tips.</p>
 
-{%- include "./_tags.html" tags: collections.tagList, showAll: true -%}
+  {% include "./_tags.html" tags: collections.tagList, showAll: true %}
 
-<ol class="Notes" role="list">
-  {%- for note in notes reversed -%}
-    <li class="Notes-item">
-      {% if note.data.blog %}
-        {% capture content %}
-          {{ note.data.excerpt }}
-        {% endcapture %}
-      {% else %}
-        {% assign content = note.templateContent %}
-      {% endif %}
-      {% include "./_note.html"
-        content: content,
-        date: note.date,
-        source: note.data.source,
-        tags: note.data.tags,
-        til: note.data.til,
-        title: note.data.title,
-        url: note.url,
-      %}
-    </li>
-  {%- endfor -%}
-</ol>
+  <ol class="Notes-list" role="list">
+    {% for note in notes reversed %}
+      <li class="Notes-item">
+        {% if note.data.blog %}
+          {% capture content %}
+            {{ note.data.excerpt }}
+          {% endcapture %}
+        {% else %}
+          {% assign content = note.templateContent %}
+        {% endif %}
+        {% include "./_note.html"
+          content: content,
+          date: note.date,
+          source: note.data.source,
+          tags: note.data.tags,
+          til: note.data.til,
+          title: note.data.title,
+          url: note.url,
+        %}
+      </li>
+    {% endfor %}
+  </ol>
+</div>
