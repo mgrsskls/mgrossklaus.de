@@ -1,0 +1,37 @@
+.WebMentions {
+  margin-block-start: 4rem;
+  border-block-start: 0.0625em solid var(--color-light);
+  padding-block-start: 4rem;
+}
+
+.WebMentions-heading {
+  margin-block-start: 0;
+}
+
+.WebMentions-list {
+  padding-inline-start: 0;
+}
+
+.WebMentions-item {
+  list-style: none;
+}
+
+.WebMentions-item + .WebMentions-item {
+  margin-block-start: 2rem;
+}
+
+.WebMention-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.WebMention-header img {
+  background: var(--color-secondary);
+  aspect-ratio: 1;
+  block-size: 2rem;
+}
+
+.WebMention-content {
+  color: var(--color-secondary);
+}

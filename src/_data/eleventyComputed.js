@@ -17,6 +17,7 @@ module.exports = {
 
     return null;
   },
+
   layout({ page }) {
     if (page.fileSlug === "feed") return null;
 
@@ -24,14 +25,17 @@ module.exports = {
 
     return "layout.html";
   },
+
   title(data) {
     if (data.title) return data.title;
 
     return "Michael Großklaus";
   },
+
   isNote(data) {
     return data.layout === "note.html";
   },
+
   excerpt(data) {
     if (!data.blog) return null;
 

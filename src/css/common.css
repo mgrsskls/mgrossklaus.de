@@ -4,6 +4,7 @@
 @import "./tags.css";
 @import "./utils.css";
 @import "./share.css";
+@import "./web-mentions.css";
 
 * {
   box-sizing: border-box;
@@ -123,12 +124,6 @@ pre {
 
 .Notes-item {
   margin-block-start: 3rem;
-  border-block-start: 0.0625em solid var(--color-light);
-  padding-block-start: 3rem;
-}
-
-.BackLink {
-  margin-block: 3rem 0;
   border-block-start: 0.0625em solid var(--color-light);
   padding-block-start: 3rem;
 }
