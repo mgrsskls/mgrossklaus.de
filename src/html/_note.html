@@ -53,13 +53,14 @@
 
   {{ content }}
 
-  {%- if source -%}
-    <footer>
+  <footer>
+    {%- if source -%}
       <p>
         <small>
           <b>Source:</b> <a href="{{ source }}">{{ source }}</a>
         </small>
       </p>
-    </footer>
-  {%- endif -%}
+    {%- endif -%}
+    <mg-share text="{{ title }}" url="{{ origin }}{{ url }}"></mg-share>
+  </footer>
 </article>

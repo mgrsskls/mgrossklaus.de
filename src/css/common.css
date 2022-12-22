@@ -93,6 +93,18 @@ blockquote::before {
   }
 }
 
+button {
+  font: inherit;
+  font-size: 0.875em;
+  appearance: none;
+  padding: 0.1em 0.5em;
+  border: 0.0625em solid var(--color-heading);
+  border-radius: 0.2em;
+  color: var(--color-heading);
+  background: none;
+  cursor: pointer;
+}
+
 .Section {
   background: var(--color-bg);
   color: var(--color-text);

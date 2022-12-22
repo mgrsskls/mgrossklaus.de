@@ -19,6 +19,7 @@ module.exports = function (eleventyConfig) {
     "dist/css/*": "css",
     "src/img": "img",
     "src/favicons": "/",
+    "src/js": "js",
   });
   eleventyConfig.addPassthroughCopy(`${input}/notes/**/*.png`);
 
