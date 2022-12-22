@@ -4,7 +4,6 @@ eleventyExcludeFromCollections: true
 metadata:
   title: Michael Großklaus
   language: en
-  url: https://www.mgrossklaus.de/
   author:
     name: Michael Großklaus
     email: mail@mgrossklaus.de
@@ -12,8 +11,8 @@ metadata:
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ metadata.title }}</title>
-  <link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/atom+xml" />
-  <link href="{{ metadata.url }}" rel="alternate" type="text/html"/>
+  <link href="{{ permalink | absoluteUrl(origin) }}" rel="self" type="application/atom+xml" />
+  <link href="{{ origin }}" rel="alternate" type="text/html"/>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
@@ -21,10 +20,10 @@ metadata:
   <updated>{{
     collections.notes | getNewestCollectionItemDate | dateToRfc3339
   }}</updated>
-  <id>{{ metadata.url }}</id>
+  <id>{{ origin }}</id>
 
   {%- for post in collections.notes | reverse %} {%- set absolutePostUrl =
-  post.url | absoluteUrl(metadata.url) %}
+  post.url | absoluteUrl(origin) %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}" />

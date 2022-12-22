@@ -11,6 +11,10 @@ module.exports = function (eleventyConfig) {
   const input = "src";
   const output = "_site";
 
+  /* Global Data */
+  eleventyConfig.addGlobalData("origin", "https://www.mgrossklaus.de");
+
+  /* Passthrough Copy */
   eleventyConfig.addPassthroughCopy({
     "dist/css/*": "css",
     "src/img": "img",
@@ -18,6 +22,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPassthroughCopy(`${input}/notes/**/*.png`);
 
+  /* Collections */
   eleventyConfig.addCollection("notes", function (collection) {
     return collection.getFilteredByGlob([`${input}/notes/**/*.md`]);
   });
@@ -37,10 +42,13 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  /* Shortcodes */
   eleventyConfig.addShortcode("isoString", (date) => date.toISOString());
 
+  /* Plugins */
   plugins.forEach((plugin) => eleventyConfig.addPlugin(plugin));
 
+  /* Transforms */
   eleventyConfig.addTransform("transformImages", (content, outputPath) =>
     transformImages(content, outputPath, output, input)
   );
