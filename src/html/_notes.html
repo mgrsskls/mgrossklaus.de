@@ -25,7 +25,7 @@
     <li class="Notes-item">
       {% if note.data.blog %}
         {% capture content %}
-          <p>{{ note.data.excerpt }}</p>
+          {{ note.data.excerpt }}
         {% endcapture %}
       {% else %}
         {% assign content = note.templateContent %}
