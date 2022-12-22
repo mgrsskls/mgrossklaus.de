@@ -4,6 +4,7 @@ mg-share {
 }
 
 mg-share button {
+  color: inherit;
   font: inherit;
   appearance: none;
   padding: 0;
