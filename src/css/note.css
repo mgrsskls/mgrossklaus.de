@@ -1,71 +1,16 @@
-.Note h1 {
-  font-size: 2em;
-  margin-block: 0;
+.Note-date {
+  font-size: 0.875em;
 }
 
-.Note :is(h1, h2) {
+.Note-title :is(h1, h2) {
+  margin-block: 0;
   line-height: 1.2;
 }
 
-.Note h2:first-child {
-  margin-block: 0;
+.Note h1 {
+  font-size: 2em;
 }
 
 .Note h2:not(:first-child) {
   margin-block-start: 1.5em;
-}
-
-.Note-til {
-  display: block;
-  margin-block-end: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: bold;
-}
-
-.Note-metaWrapper {
-  display: flex;
-  margin-block-start: 0.5rem;
-}
-
-.Note-meta {
-  display: flex;
-  font-size: 0.875em;
-}
-
-.Note-meta:not(:last-child)::after {
-  content: "";
-  display: block;
-  background: var(--color-secondary);
-  block-size: 1em;
-  inline-size: 0.0625em;
-  margin-inline-start: 0.75em;
-  transform: translateY(-50%);
-  position: relative;
-  inset-block-start: 50%;
-}
-
-.Note-meta dd {
-  color: var(--color-secondary);
-}
-
-.Note-tags {
-  display: flex;
-  list-style: none;
-  padding-inline-start: 0;
-  margin: 0;
-}
-
-.Note-tagsItem:not(:last-child)::after {
-  content: "·";
-}
-
-.Note-tag {
-  color: inherit;
-  padding: 0.5em 0.75em;
-}
-
-@media (hover: none) and (pointer: coarse) {
-  .Note-metaWrapper {
-    margin-block-start: 1rem;
-  }
 }

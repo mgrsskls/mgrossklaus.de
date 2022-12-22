@@ -1,0 +1,14 @@
+mg-share {
+  font-size: 0.875em;
+  margin-inline-start: auto;
+}
+
+mg-share button {
+  font: inherit;
+  appearance: none;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}

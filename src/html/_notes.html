@@ -1,24 +1,6 @@
 <p class="NotesIntro">Collecting some frontend related notes, thoughts, bookmarks and tips.</p>
 
-<ul class="Tags">
-  <li>
-    {%- if page.url == "/" -%}
-      <span class="Tag">all</span>
-    {%- else -%}
-      <a class="Tag" href="/">all</a>
-    {%- endif -%}
-  </li>
-  {%- for tag in collections.tagList -%}
-    <li>
-      {%- assign url = "/tags/" | append: tag | append: "/" -%}
-      {%- if page.url == url -%}
-        <span class="Tag">{{ tag }}</span>
-      {%- else -%}
-        <a class="Tag" href="/tags/{{ tag }}" rel="tag">{{ tag }}</a>
-      {%- endif -%}
-    </li>
-  {%- endfor -%}
-</ul>
+{%- include "./_tags.html" tags: collections.tagList, showAll: true -%}
 
 <ol class="Notes" role="list">
   {%- for note in notes reversed -%}

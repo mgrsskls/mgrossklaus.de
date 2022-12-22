@@ -16,6 +16,10 @@
   border-radius: 0.2em;
 }
 
+.Tag::before {
+  content: "#";
+}
+
 a.Tag {
   color: var(--color-heading);
 }

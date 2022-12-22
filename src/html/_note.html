@@ -1,55 +1,22 @@
 <article class="Note" data-url="{{ url }}">
+  <header>
+    {%- if date -%}
+      <time class="Note-date" datetime="{% isoString date %}">{{ date }}</time>
+    {%- endif -%}
 
-  {%- if title -%}
-    {% if isNote %}
-      <h1>
-    {% else %}
-      <h2>
-    {% endif %}
-      {%- if til -%}
-        <span class="Note-til">
-          Today I learned<span class="u-hiddenVisually">:</span>
-        </span>
-      {%- endif -%}
-      {%- if url -%}<a href="{{ url }}" rel="bookmark">{%- endif -%}
-        {{ title }}
-      {%- if url -%}</a>{%- endif -%}
-    {% if isNote %}
-      </h1>
-    {% else %}
-      </h2>
-    {% endif %}
-  {%- endif -%}
-
-  {%- if date or tags -%}
-    <dl class="Note-metaWrapper">
-      {%- if date -%}
-        <div class="Note-meta">
-          <dt class="u-hiddenVisually">Date:</dt>
-          <dd><time datetime="{% isoString date %}">{{ date }}</time></dd>
-        </div>
-      {%- endif -%}
-      {%- if tags -%}
-        <div class="Note-meta">
-          <dt class="u-hiddenVisually">Tags:</dt>
-          <dd>
-            <ul class="Note-tags">
-              {%- for tag in tags -%}
-                <li class="Note-tagsItem">
-                  {%- assign tagUrl = "/tags/" | append: tag | append: "/" -%}
-                  {%- if page.url == tagUrl -%}
-                    <span class="Note-tag">{{ tag }}</span>
-                  {%- else -%}
-                    <a class="Note-tag" href="/tags/{{ tag }}" rel="tag">{{ tag }}</a>
-                  {%- endif -%}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </dd>
-        </div>
-      {%- endif -%}
-    </dl>
-  {%- endif -%}
+    {%- if title -%}
+      <div class="Note-title">
+        {% if isNote %}<h1>{% else %}<h2>{% endif %}
+        {%- if til -%}
+          <abbr class="Note-til" title="Today I learned">TIL: </abbr>
+        {%- endif -%}
+        {%- if url -%}<a href="{{ url }}" rel="bookmark">{%- endif -%}
+          {{ title }}
+        {%- if url -%}</a>{%- endif -%}
+        {% if isNote %}</h1>{% else %}</h2>{% endif %}
+      </div>
+    {%- endif -%}
+  </header>
 
   {{ content }}
 
@@ -61,6 +28,15 @@
         </small>
       </p>
     {%- endif -%}
-    <mg-share text="{{ title }}" url="{{ origin }}{{ url }}"></mg-share>
+
+    <div class="u-flex u-spaceBetween u-gap">
+      {%- if tags -%}
+      <div class="Note-tags">
+        {%- include "./_tags.html" tags: tags, showAll: false -%}
+      </div>
+      {%- endif -%}
+
+      <mg-share text="{{ title }}" url="{{ origin }}{{ url }}"></mg-share>
+    </div>
   </footer>
 </article>

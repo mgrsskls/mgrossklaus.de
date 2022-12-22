@@ -1,0 +1,11 @@
+.u-flex {
+  display: flex;
+}
+
+.u-spaceBetween {
+  justify-content: space-between;
+}
+
+.u-gap {
+  gap: 1rem;
+}
