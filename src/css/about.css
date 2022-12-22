@@ -28,7 +28,6 @@
 }
 
 .About-name {
-  font-size: 2rem;
   font-weight: bold;
   line-height: 1;
   margin-block: 1em 0;
@@ -57,8 +56,29 @@ dd + dt {
 }
 
 @media (max-width: 48.0625em) {
+  .About-me {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .About-me picture {
+    flex-shrink: 0;
+  }
+
   .About-img {
-    inline-size: 8rem;
+    inline-size: 3rem;
+  }
+
+  .About-name {
+    margin-block: 0;
+    font-size: 1.5rem;
+  }
+
+  .About-details {
+    border-block-start: 0.0625em solid var(--color-about-divider);
+    padding-block-start: 0.5rem;
+    margin-block-start: 1rem;
   }
 }
 
@@ -79,5 +99,13 @@ dd + dt {
     max-inline-size: 36rem;
     margin-inline-start: auto;
     flex: 1;
+  }
+
+  .About-name {
+    font-size: 2rem;
+  }
+
+  .About-details summary {
+    display: none;
   }
 }

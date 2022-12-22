@@ -1,7 +1,7 @@
 .WebMentions {
-  margin-block-start: 4rem;
+  margin-block-start: var(--spacing);
   border-block-start: 0.0625em solid var(--color-light);
-  padding-block-start: 4rem;
+  padding-block-start: var(--spacing);
 }
 
 .WebMentions-heading {
@@ -34,4 +34,16 @@
 
 .WebMention-content {
   color: var(--color-secondary);
+}
+
+@media (max-width: 64em) {
+  .WebMentions {
+    --spacing: 2rem;
+  }
+}
+
+@media (min-width: 64.0625em) {
+  .WebMentions {
+    --spacing: 4rem;
+  }
 }
