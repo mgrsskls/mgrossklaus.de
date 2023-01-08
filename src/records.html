@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Records — Michael Großklaus</title>
+    <link href="/css/records.css" rel="stylesheet" />
+    <meta name="description" content="Michael Großklaus is a Hamburg, Germany based frontend developer." />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <ol class="Records">
+      {% for record in records %}
+        <li class="Records-item">
+          <a class="Record" href="https://www.discogs.com/release/{{ record.id }}">
+            {% capture title %}
+              {{ record.artists[0].name }}: {{ record.title }}
+            {% endcapture %}
+            <img class="Record-image" src="{{ record.thumb }}" alt="Album cover of {{ title | escape }}" width="150" height="150">
+            <span class="Record-title">
+              <b>{{ record.title }}</b>
+              <span class="Record-artist">
+                {% assign artists = record.artists | map: "name" %}
+                {{ artists | join: ", " }}
+              </span>
+            </span>
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
+  </body>
+</html>

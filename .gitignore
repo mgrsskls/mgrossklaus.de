@@ -3,4 +3,6 @@ dist/
 node_modules/
 notes/private
 notes/.sync_*
+.env
+.cache/
 .obsidian/
