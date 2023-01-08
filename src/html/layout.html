@@ -21,14 +21,8 @@
     </noscript>
   </head>
   <body>
-    <header class="Section Section--about">
-      {% include "_about.html" %}
-    </header>
-    <main class="Section Section--content">
-      <div class="Content">
-        {{ content }}
-      </div>
-    </main>
+    {{ content }}
+
     <script>
       document.querySelectorAll("time").forEach((time) => {
         time.textContent = new Date(time.dateTime).toLocaleDateString();

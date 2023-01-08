@@ -4,13 +4,32 @@ layout: layout.html
 
 <script src="/js/web-mentions.js" defer></script>
 
-{%
-  include "./_note.html"
-  content: content,
-  date: page.date,
-  isDetailView: true,
-  path: page.url,
-  source: source,
-  til: til,
-  title: title,
-%}
+<div class="NoteDetail">
+  <a class="NoteDetail-header" href="/" rel="me">
+    <picture>
+      <source srcset="/img/me-x2.avif" type="image/avif">
+      <source srcset="/img/me-x2.webp" type="image/webp">
+      <img
+      src="/img/me-x2.jpg"
+      alt="Profile picture of Michael Großklaus"
+      width="40"
+      height="40"
+      fetchpriority="high"
+      class="About-img"
+      >
+    </picture>
+    Michael Großklaus
+  </a>
+
+
+  {%
+    include "./_note.html"
+    content: content,
+    date: page.date,
+    isDetailView: true,
+    path: page.url,
+    source: source,
+    til: til,
+    title: title,
+  %}
+</div>

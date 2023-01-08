@@ -1,5 +1,5 @@
 @media (min-width: 48.0625em) {
-  body {
+  .Page {
     display: grid;
     grid-template-columns: 38.2% 61.8%;
   }

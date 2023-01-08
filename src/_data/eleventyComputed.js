@@ -23,7 +23,7 @@ module.exports = {
 
     if (page.filePathStem.includes("notes/")) return "note.html";
 
-    return "layout.html";
+    return "default.html";
   },
 
   title(data) {

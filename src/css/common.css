@@ -50,29 +50,3 @@ body {
     --color-text: hsl(200.9, 27.9%, 75%);
   }
 }
-
-.BackLink {
-  margin-block-start: calc(-0.5 * var(--spacing));
-  margin-block-end: var(--spacing);
-  padding-block-end: calc(var(--spacing) / 2);
-  border-block-end: var(--divider) var(--color-light);
-}
-
-.BackLink-link {
-  font-size: 0.875em;
-  position: relative;
-}
-
-.BackLink-link::before {
-  content: "←";
-  position: absolute;
-  inset-inline-end: calc(100% + 0.5em);
-  inset-block-start: 50%;
-  transform: translateY(-50%);
-}
-
-@media (max-width: 64em) {
-  .BackLink-link {
-    margin-inline-start: 1.5em;
-  }
-}
