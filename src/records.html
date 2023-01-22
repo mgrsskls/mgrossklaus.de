@@ -17,7 +17,7 @@
             {% capture title %}
               {{ record.artists[0].name }}: {{ record.title }}
             {% endcapture %}
-            <img class="Record-image" src="{{ record.thumb }}" alt="Album cover of {{ title | escape }}" width="150" height="150">
+            <img class="Record-image" src="{{ record.cover_image }}" alt="Album cover of {{ title | escape }}" width="150" height="150" loading="lazy">
             <span class="Record-title">
               <b>{{ record.title }}</b>
               <span class="Record-artist">
