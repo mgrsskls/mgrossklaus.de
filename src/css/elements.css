@@ -53,6 +53,10 @@ blockquote::before {
   }
 }
 
+.theme-dark blockquote::before {
+  filter: invert(1);
+}
+
 pre {
   margin-block: 1.5em;
 }

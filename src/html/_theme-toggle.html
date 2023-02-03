@@ -1,0 +1,34 @@
+<form>
+  <fieldset class="ThemeToggle">
+    <legend class="ThemeToggle-title">Color scheme</legend>
+    <input type="radio" name="theme" value="auto" id="theme-auto" checked />
+    <label for="theme-auto">auto</label>
+    <input type="radio" name="theme" value="light" id="theme-light"/>
+    <label for="theme-light">light</label>
+    <input type="radio" name="theme" value="dark" id="theme-dark"/>
+    <label for="theme-dark">dark</label>
+  </fieldset>
+</form>
+<script>
+  function renderTheme(theme) {
+    if (!["auto", "light", "dark"].includes(theme)) return;
+
+    ["auto", "light", "dark"].forEach((option) => {
+      document.documentElement.classList.remove(
+        `theme-${option}`
+      );
+    });
+
+    const checkedInput = document.getElementById(`theme-${theme}`);
+
+    if (checkedInput) {
+      checkedInput.checked = true;
+
+      if (theme !== "auto") {
+        document.documentElement.classList.add(`theme-${theme}`);
+      }
+    }
+  }
+
+  renderTheme(localStorage.theme);
+</script>

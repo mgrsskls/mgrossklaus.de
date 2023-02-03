@@ -65,3 +65,69 @@
     color: #f2ff00;
   }
 }
+
+.theme-dark .language-css > code,
+.theme-dark .language-sass > code,
+.theme-dark .language-scss > code,
+.theme-dark .token.number,
+.theme-dark .token.unit {
+  color: #fd9170;
+}
+
+.theme-dark .token.constant,
+.theme-dark .token.function,
+.theme-dark .token.id,
+.theme-dark .token.important,
+.theme-dark .token.keyword,
+.theme-dark .token.atrule,
+.theme-dark .token.boolean,
+.theme-dark .token.symbol {
+  color: #c792ea;
+}
+
+.theme-dark .token.attr-name,
+.theme-dark .token.builtin,
+.theme-dark .token.class {
+  color: #ffcb6b;
+}
+
+.theme-dark .token.attr-value,
+.theme-dark .token.attribute,
+.theme-dark .token.pseudo-class,
+.theme-dark .token.pseudo-element,
+.theme-dark .token.string {
+  color: #a5e844;
+}
+
+.theme-dark .token.cdata,
+.theme-dark .token.char,
+.theme-dark .token.inserted,
+.theme-dark .token.property {
+  color: #80cbc4;
+}
+
+.theme-dark .token.comment,
+.theme-dark .token.doctype,
+.theme-dark .token.prolog {
+  color: #868e99;
+}
+
+.theme-dark .token.deleted,
+.theme-dark .token.entity,
+.theme-dark .token.selector,
+.theme-dark .token.tag,
+.theme-dark .token.url,
+.theme-dark .token.variable {
+  color: #ff6666;
+}
+
+.theme-dark .token.operator,
+.theme-dark .token.punctuation {
+  color: #89ddff;
+}
+
+.theme-dark .token.hexcode,
+.theme-dark .token.regex,
+.theme-dark .token.class-name {
+  color: #f2ff00;
+}

@@ -1,12 +1,5 @@
 .Section--about {
-  --color-bg: var(--color-dark-bg);
-  --color-text: var(--color-dark-text);
-  --color-heading: var(--color-dark-heading);
-  --color-secondary: var(--color-dark-secondary);
-  --color-light: var(--color-dark-light);
-  --color-link: var(--color-dark-link);
-
-  color-scheme: dark;
+  background: #12212b;
 }
 
 .About > *:last-child {
@@ -18,14 +11,14 @@
 }
 
 .About-code {
-  border-block-start: var(--divider) var(--color-about-divider);
-  color: var(--color-about-code);
+  border-block-start: var(--divider) var(--color-dark-divider);
+  color: var(--color-code);
   padding-block-start: var(--spacing);
   margin-block-start: var(--spacing);
 }
 
 .About-code a {
-  color: var(--color-about-link);
+  color: var(--color-link);
 }
 
 .About-name {
@@ -81,7 +74,7 @@
   }
 
   .About-details {
-    border-block-start: var(--divider) var(--color-about-divider);
+    border-block-start: var(--divider) var(--color-divider);
     padding-block-start: var(--spacing);
     margin-block-start: var(--spacing);
   }

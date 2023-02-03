@@ -1,0 +1,13 @@
+.ThemeToggle {
+  border: none;
+  padding: 0;
+  font-size: 0.875em;
+}
+
+.ThemeToggle-title {
+  font-weight: bold;
+}
+
+.ThemeToggle label {
+  color: var(--color-heading);
+}

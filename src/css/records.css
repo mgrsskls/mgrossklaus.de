@@ -39,6 +39,10 @@ body {
   }
 }
 
+.theme-dark body {
+  background: hsl(203.5, 40.4%, 12%);
+}
+
 @media (hover: hover) {
   .Record {
     position: relative;

@@ -12,7 +12,7 @@
 
 .Notes-item {
   margin-block-start: var(--spacing);
-  border-block-start: var(--divider) var(--color-light);
+  border-block-start: var(--divider) var(--color-divider);
   padding-block-start: var(--spacing);
 }
 

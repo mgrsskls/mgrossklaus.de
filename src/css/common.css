@@ -7,6 +7,7 @@
 @import "./notes.css";
 @import "./share.css";
 @import "./tags.css";
+@import "./theme-toggle.css";
 @import "./web-mentions.css";
 @import "./utils.css";
 
@@ -24,31 +25,10 @@ body {
 }
 
 .Section {
-  background: var(--color-bg);
   color: var(--color-text);
   padding: var(--spacing);
 }
 
 .Section--content {
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    --color-bg: var(--color-dark-bg2);
-    --color-bg-code: var(--color-dark-bg-code);
-    --color-text: var(--color-dark-text);
-    --color-heading: var(--color-dark-heading);
-    --color-secondary: var(--color-dark-secondary);
-    --color-light: var(--color-dark-light);
-    --color-link: var(--color-dark-link);
-    --color-about-divider: var(--color-dark-til-bg);
-    --color-tag-active: var(--color-dark-tag-active);
-  }
-}
-
-@media (prefers-contrast: less) {
-  .Section--about {
-    --color-text: hsl(200.9, 27.9%, 75%);
-  }
+  background: var(--color-bg);
 }

@@ -1,18 +1,22 @@
 html {
-  --color-bg: #fff;
-  --color-bg-code: #f5f5f5;
-  --color-text: #333;
-  --color-heading: #134159;
-  --color-secondary: #767676;
-  --color-light: #eee;
-  --color-link: hsl(321deg 81% 33%);
-  --color-about-divider: hsl(203.5, 40.4%, 30%);
-  --color-about-link: hsl(200.9, 27.9%, 75%);
-  --color-about-code: hsl(201deg 28% 60%);
-  --color-tag-active: #fff;
+  --true:;
+  --false: initial;
 
-  --color-dark-bg: hsl(203.5, 40.4%, 12%);
-  --color-dark-bg2: hsl(203.5, 40.4%, 10%);
+  --light: var(--true);
+
+  --color-light-scheme: var(--light) light;
+  --color-light-bg: var(--light) #fff;
+  --color-light-bg-code: var(--light) #f5f5f5;
+  --color-light-text: var(--light) #333;
+  --color-light-heading: var(--light) #134159;
+  --color-light-secondary: var(--light) #767676;
+  --color-light-light: var(--light) #eee;
+  --color-light-link: var(--light) hsl(321deg 81% 33%);
+  --color-light-tag-active: var(--light) #fff;
+  --color-light-divider: var(--light) #eee;
+
+  --color-dark-scheme: dark;
+  --color-dark-bg: hsl(203.5, 40.4%, 10%);
   --color-dark-bg-code: hsl(203.5, 40.4%, 12%);
   --color-dark-text: #eee;
   --color-dark-heading: hsl(201deg 28% 70%);
@@ -20,33 +24,58 @@ html {
   --color-dark-light: rgba(255, 255, 255, 0.1);
   --color-dark-link: rgb(176, 118, 155);
   --color-dark-tag-active: #000;
+  --color-dark-divider: #2e536b;
+
+  --color-scheme: var(--color-light-scheme, var(--color-dark-scheme));
+  --color-bg: var(--color-light-bg, var(--color-dark-bg));
+  --color-bg-code: var(--color-light-bg-code, var(--color-dark-bg-code));
+  --color-text: var(--color-light-text, var(--color-dark-text));
+  --color-heading: var(--color-light-heading, var(--color-dark-heading));
+  --color-secondary: var(--color-light-secondary, var(--color-dark-secondary));
+  --color-light: var(--color-light-light, var(--color-dark-light));
+  --color-link: var(--color-light-link, var(--color-dark-link));
+  --color-divider: var(--color-light-divider, var(--color-dark-divider));
+  --color-tag-active: var(
+    --color-light-tag-active,
+    var(--color-dark-tag-active)
+  );
 
   --spacing: clamp(1rem, 3vw, 3rem);
 
   --divider: 0.0625em solid;
+
+  accent-color: var(--color-link);
+  color-scheme: var(--color-scheme);
 }
 
-@media (prefers-contrast: less) {
-  html {
-    --color-bg: #eee;
-  }
+.Section--about {
+  --color-text: var(--color-dark-text);
+  --color-divider: var(--color-dark-divider);
+  --color-link: var(--color-dark-link);
+  --color-code: var(--color-dark-code);
+  --color-heading: var(--color-dark-heading);
 
-  .Section--about {
-    --color-text: hsl(200.9, 27.9%, 75%);
+  color-scheme: dark;
+}
+
+.theme-light {
+  --light: var(--true);
+}
+
+html:has([name="theme"][value="light"]:checked) {
+  --light: var(--true);
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --light: var(--false);
   }
 }
 
-@media (prefers-contrast: more) {
-  html {
-    --color-text: #000;
-    --color-secondary: #000;
-    --color-link: hsl(321deg 81% 25%);
+.theme-dark {
+  --light: var(--false);
+}
 
-    --color-dark-text: #fff;
-    --color-dark-heading: hsl(201deg 28% 75%);
-    --color-dark-light: rgba(255, 255, 255, 0.1);
-    --color-dark-secondary: hsl(217deg 12% 75%);
-    --color-dark-link: hsl(322deg 27% 75%);
-    --color-about-code: hsl(201deg 28% 75%);
-  }
+html:has([name="theme"][value="dark"]:checked) {
+  --light: var(--false);
 }
