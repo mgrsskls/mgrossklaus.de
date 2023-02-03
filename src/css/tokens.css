@@ -8,14 +8,14 @@ html {
   --color-link: hsl(321deg 81% 33%);
   --color-about-divider: hsl(203.5, 40.4%, 30%);
   --color-about-link: hsl(200.9, 27.9%, 75%);
-  --color-about-code: hsl(201deg 28% 52%);
+  --color-about-code: hsl(201deg 28% 60%);
   --color-tag-active: #fff;
 
   --color-dark-bg: hsl(203.5, 40.4%, 12%);
   --color-dark-bg2: hsl(203.5, 40.4%, 10%);
   --color-dark-bg-code: hsl(203.5, 40.4%, 12%);
   --color-dark-text: #eee;
-  --color-dark-heading: hsl(201deg 28% 52%);
+  --color-dark-heading: hsl(201deg 28% 70%);
   --color-dark-secondary: hsl(217deg 12% 65%);
   --color-dark-light: rgba(255, 255, 255, 0.1);
   --color-dark-link: rgb(176, 118, 155);
