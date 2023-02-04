@@ -1,0 +1,20 @@
+.Settings-rss {
+	align-items: center;
+	display: flex;
+	stroke: currentColor;
+}
+
+.Settings-themeToggle {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.Settings-themeToggle::before {
+	content: "";
+	display: block;
+	background: #fff;
+	inline-size: 0.0625em;
+	block-size: 1em;
+	opacity: 0.5;
+}

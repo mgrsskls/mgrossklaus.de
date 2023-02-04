@@ -1,23 +1,23 @@
 .Notes-intro {
-  margin-block: 0 var(--spacing);
-  color: var(--color-heading);
-  font-weight: 600;
+	margin-block: 0 var(--spacing);
+	color: var(--color-heading);
+	font-weight: 600;
 }
 
 .Notes-list {
-  list-style: none;
-  margin-block-start: 0;
-  padding-inline-start: 0;
+	list-style: none;
+	margin-block-start: 0;
+	padding-inline-start: 0;
 }
 
 .Notes-item {
-  margin-block-start: var(--spacing);
-  border-block-start: var(--divider) var(--color-divider);
-  padding-block-start: var(--spacing);
+	margin-block-start: var(--spacing);
+	border-block-start: var(--divider) var(--color-outline);
+	padding-block-start: var(--spacing);
 }
 
 @media (max-width: 64em) {
-  .Notes-item {
-    --spacing: 2rem;
-  }
+	.Notes-item {
+		--spacing: 2rem;
+	}
 }

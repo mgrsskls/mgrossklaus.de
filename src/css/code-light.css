@@ -4,7 +4,7 @@
 .token.unit,
 .token.hexcode,
 .token.number {
-  color: #b94f32;
+	color: #b94f32;
 }
 
 .token.atrule,
@@ -15,7 +15,7 @@
 .token.important,
 .token.keyword,
 .token.symbol {
-  color: #6a42db;
+	color: #6a42db;
 }
 
 .token.attr-name,
@@ -27,7 +27,7 @@
 .token.operator,
 .token.property,
 .token.punctuation {
-  color: #157b82;
+	color: #157b82;
 }
 
 .token.attr-value,
@@ -35,18 +35,18 @@
 .token.pseudo-class,
 .token.pseudo-element,
 .token.string {
-  color: #955e11;
+	color: #955e11;
 }
 
 .token.class-name,
 .token.regex {
-  color: #6182b8;
+	color: #6182b8;
 }
 
 .token.comment,
 .token.doctype,
 .token.prolog {
-  color: #667277;
+	color: #667277;
 }
 
 .token.deleted,
@@ -55,5 +55,125 @@
 .token.tag,
 .token.url,
 .token.variable {
-  color: #d03430;
+	color: #d03430;
+}
+
+.theme-light .language-css > code,
+.theme-light .language-sass > code,
+.theme-light .language-scss > code,
+.theme-light .token.unit,
+.theme-light .token.hexcode,
+.theme-light .token.number {
+	color: #b94f32;
+}
+
+.theme-light .token.atrule,
+.theme-light .token.boolean,
+.theme-light .token.constant,
+.theme-light .token.function,
+.theme-light .token.id,
+.theme-light .token.important,
+.theme-light .token.keyword,
+.theme-light .token.symbol {
+	color: #6a42db;
+}
+
+.theme-light .token.attr-name,
+.theme-light .token.builtin,
+.theme-light .token.cdata,
+.theme-light .token.char,
+.theme-light .token.class,
+.theme-light .token.inserted,
+.theme-light .token.operator,
+.theme-light .token.property,
+.theme-light .token.punctuation {
+	color: #157b82;
+}
+
+.theme-light .token.attr-value,
+.theme-light .token.attribute,
+.theme-light .token.pseudo-class,
+.theme-light .token.pseudo-element,
+.theme-light .token.string {
+	color: #955e11;
+}
+
+.theme-light .token.class-name,
+.theme-light .token.regex {
+	color: #6182b8;
+}
+
+.theme-light .token.comment,
+.theme-light .token.doctype,
+.theme-light .token.prolog {
+	color: #667277;
+}
+
+.theme-light .token.deleted,
+.theme-light .token.entity,
+.theme-light .token.selector,
+.theme-light .token.tag,
+.theme-light .token.url,
+.theme-light .token.variable {
+	color: #d03430;
+}
+
+html:has([name="theme"][value="light"]:checked) .language-css > code,
+html:has([name="theme"][value="light"]:checked) .language-sass > code,
+html:has([name="theme"][value="light"]:checked) .language-scss > code,
+html:has([name="theme"][value="light"]:checked) .token.unit,
+html:has([name="theme"][value="light"]:checked) .token.hexcode,
+html:has([name="theme"][value="light"]:checked) .token.number {
+	color: #b94f32;
+}
+
+html:has([name="theme"][value="light"]:checked) .token.atrule,
+html:has([name="theme"][value="light"]:checked) .token.boolean,
+html:has([name="theme"][value="light"]:checked) .token.constant,
+html:has([name="theme"][value="light"]:checked) .token.function,
+html:has([name="theme"][value="light"]:checked) .token.id,
+html:has([name="theme"][value="light"]:checked) .token.important,
+html:has([name="theme"][value="light"]:checked) .token.keyword,
+html:has([name="theme"][value="light"]:checked) .token.symbol {
+	color: #6a42db;
+}
+
+html:has([name="theme"][value="light"]:checked) .token.attr-name,
+html:has([name="theme"][value="light"]:checked) .token.builtin,
+html:has([name="theme"][value="light"]:checked) .token.cdata,
+html:has([name="theme"][value="light"]:checked) .token.char,
+html:has([name="theme"][value="light"]:checked) .token.class,
+html:has([name="theme"][value="light"]:checked) .token.inserted,
+html:has([name="theme"][value="light"]:checked) .token.operator,
+html:has([name="theme"][value="light"]:checked) .token.property,
+html:has([name="theme"][value="light"]:checked) .token.punctuation {
+	color: #157b82;
+}
+
+html:has([name="theme"][value="light"]:checked) .token.attr-value,
+html:has([name="theme"][value="light"]:checked) .token.attribute,
+html:has([name="theme"][value="light"]:checked) .token.pseudo-class,
+html:has([name="theme"][value="light"]:checked) .token.pseudo-element,
+html:has([name="theme"][value="light"]:checked) .token.string {
+	color: #955e11;
+}
+
+html:has([name="theme"][value="light"]:checked) .token.class-name,
+html:has([name="theme"][value="light"]:checked) .token.regex {
+	color: #6182b8;
+}
+
+html:has([name="theme"][value="light"]:checked) .token.comment,
+html:has([name="theme"][value="light"]:checked) .token.doctype,
+html:has([name="theme"][value="light"]:checked) .token.prolog {
+	color: #667277;
+}
+
+html:has([name="theme"][value="light"]:checked) .token.deleted,
+html:has([name="theme"][value="light"]:checked) .token.entity,
+html:has([name="theme"][value="light"]:checked) .token.selector,
+html:has([name="theme"][value="light"]:checked) .token.tag,
+html:has([name="theme"][value="light"]:checked) .token.url,
+html:has([name="theme"][value="light"]:checked) .token.variable {
+	color: #d03430;
 }

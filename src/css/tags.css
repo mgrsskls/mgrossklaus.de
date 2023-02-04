@@ -1,34 +1,35 @@
 .Tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .Tag {
-  display: inline-block;
-  font-size: 0.875em;
-  padding: 0.1em 0.5em;
-  text-decoration: none;
-  border: 0.0625em solid var(--color-heading);
-  border-radius: 0.2em;
+	display: inline-block;
+	font-size: 0.875rem;
+	padding: 0.1em 0.5em;
+	text-decoration: none;
+	border: var(--border) var(--color-outline);
+	border-radius: var(--border-radius);
 }
 
 .Tag:not(.Tag--all)::before {
-  content: "#";
+	content: "#";
 }
 
 a.Tag {
-  color: var(--color-heading);
+	color: var(--color-heading);
 }
 
 a.Tag:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 span.Tag {
-  color: var(--color-tag-active);
-  background: var(--color-heading);
+	border-color: var(--color-tag-bg-active);
+	color: var(--color-tag-active);
+	background: var(--color-tag-bg-active);
 }

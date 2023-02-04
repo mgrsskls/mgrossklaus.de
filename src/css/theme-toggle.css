@@ -1,4 +1,7 @@
 .ThemeToggle {
+	align-items: center;
+	gap: 0.5rem;
+	display: flex;
 	border: none;
 	padding: 0;
 	font-size: 0.875em;
@@ -6,10 +9,36 @@
 	white-space: nowrap;
 }
 
-.ThemeToggle-title {
-	font-weight: bold;
+.ThemeToggle-wrapper {
+	display: flex;
+	gap: 0.5rem;
 }
 
 .ThemeToggle label {
 	color: var(--color-heading);
+	border-radius: var(--border-radius);
+	padding: 0.25em;
+	color: var(--color-theme-icon);
+}
+
+.ThemeToggle input:checked + label {
+	background: var(--color-heading);
+	color: var(--color-theme-icon-active);
+}
+
+.ThemeToggle-icon {
+	--size: 1.2rem;
+
+	display: block;
+	inline-size: var(--size);
+	block-size: var(--size);
+}
+
+.ThemeToggle-icon--auto,
+.ThemeToggle-icon--light {
+	stroke: currentColor;
+}
+
+.ThemeToggle-icon--dark {
+	fill: currentColor;
 }

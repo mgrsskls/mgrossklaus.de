@@ -1,44 +1,44 @@
 .WebMentions {
-  margin-block-start: var(--spacing);
-  border-block-start: var(--divider) var(--color-light);
-  padding-block-start: var(--spacing);
+	margin-block-start: var(--spacing);
+	border-block-start: var(--divider) var(--color-outline);
+	padding-block-start: var(--spacing);
 }
 
 .WebMentions-heading {
-  margin-block-start: 0;
+	margin-block-start: 0;
 }
 
 .WebMentions-list {
-  padding-inline-start: 0;
-  margin-block: 0;
+	padding-inline-start: 0;
+	margin-block: 0;
 }
 
 .WebMentions-item {
-  list-style: none;
+	list-style: none;
 }
 
 .WebMentions-item + .WebMentions-item {
-  margin-block-start: 2rem;
+	margin-block-start: 2rem;
 }
 
 .WebMention-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .WebMention-header img {
-  background: var(--color-secondary);
-  aspect-ratio: 1;
-  block-size: 2rem;
+	background: var(--color-secondary);
+	aspect-ratio: 1;
+	block-size: 2rem;
 }
 
 .WebMention-content {
-  color: var(--color-secondary);
+	color: var(--color-secondary);
 }
 
 @media (max-width: 64em) {
-  .WebMentions {
-    --spacing: 2rem;
-  }
+	.WebMentions {
+		--spacing: 2rem;
+	}
 }

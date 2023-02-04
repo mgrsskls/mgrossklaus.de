@@ -1,15 +1,17 @@
 mg-share {
-  font-size: 0.875em;
-  margin-inline-start: auto;
+	display: flex;
+	justify-content: flex-end;
+	color: var(--color-secondary);
+	flex: 1;
 }
 
 mg-share button {
-  color: inherit;
-  font: inherit;
-  appearance: none;
-  padding: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-decoration: underline;
+	color: inherit;
+	font: inherit;
+	appearance: none;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-decoration: underline;
 }

@@ -1,8 +1,15 @@
 <article class="Note" data-url="{{ url }}">
   <header>
-    {% if date %}
-      <time class="Note-date" datetime="{% isoString date %}">{{ date }}</time>
-    {% endif %}
+    <div class="u-flex u-spaceBetween u-gap">
+      {% if date %}
+        <time class="Note-date" datetime="{% isoString date %}">{{ date }}</time>
+      {% endif %}
+      {% if tags %}
+        <div class="Note-tags">
+          {% include "./_tags.html" tags: tags, showAll: false %}
+        </div>
+      {% endif %}
+    </div>
 
     {% if title %}
       <div class="Note-title">
@@ -23,28 +30,22 @@
         </{{headingTag}}>
       </div>
     {% endif %}
+
   </header>
 
-  {{ content }}
+  <div class="Note-richText">
+    {{ content }}
+
+  </div>
 
   <footer class="Note-footer">
     {% if source %}
-      <p>
-        <small>
-          <b>Source:</b> <a href="{{ source }}">{{ source }}</a>
-        </small>
+      <p class="Note-source">
+        <b>Source:</b> <a href="{{ source }}">{{ source }}</a>
       </p>
     {% endif %}
 
-    <div class="u-flex u-spaceBetween u-gap">
-      {% if tags %}
-      <div class="Note-tags">
-        {% include "./_tags.html" tags: tags, showAll: false %}
-      </div>
-      {% endif %}
-
-      <mg-share text="{{ title }}" url="{{ origin }}{{ url }}"></mg-share>
-    </div>
+    <mg-share text="{{ title }}" url="{{ origin }}{{ url }}"></mg-share>
   </footer>
 </article>
 

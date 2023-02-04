@@ -2,6 +2,10 @@
 	font-size: 0.875em;
 }
 
+.Note-title {
+	margin-block-start: 1rem;
+}
+
 .Note-title :is(h1, h2) {
 	margin-block: 0;
 	line-height: 1.2;
@@ -15,33 +19,13 @@
 	margin-block-start: 1.5em;
 }
 
-.NoteDetail {
-	max-inline-size: 72ch;
-	margin-inline: auto;
-	padding-block-end: var(--spacing);
-	padding-inline: 1rem;
-}
-
-.NoteDetail-header {
+.Note-footer {
+	font-size: 0.875em;
 	display: flex;
-	align-items: center;
-	gap: 1rem;
 	justify-content: space-between;
-	margin-block-end: var(--spacing);
-	padding-block: calc(var(--spacing) / 2);
-	border-block-end: var(--divider) var(--color-light);
+	gap: 1rem;
 }
 
-.NoteDetail-headerLink {
-	display: flex;
-	align-items: center;
-	font-size: clamp(0.875rem, 3vw, 1rem);
-	gap: clamp(0.5rem, 2vw, 1rem);
-	line-height: 1.2;
-}
-
-.NoteDetail .Note-footer {
-	border-block-start: var(--divider) var(--color-light);
-	margin-block-start: var(--spacing);
-	padding-block-start: var(--spacing);
+.Note-source {
+	margin: 0;
 }

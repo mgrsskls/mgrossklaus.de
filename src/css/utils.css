@@ -1,24 +1,35 @@
 .u-hiddenVisually {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }
 
 .u-flex {
-  display: flex;
+	display: flex;
 }
 
 .u-spaceBetween {
-  justify-content: space-between;
+	justify-content: space-between;
+}
+
+.u-alignCenter {
+	align-items: center;
 }
 
 .u-gap {
-  gap: 1rem;
+	gap: 1rem;
+}
+
+.u-container {
+	margin-inline: auto;
+	max-inline-size: 72ch;
+	padding-inline: var(--spacing);
+	inline-size: 100%;
 }

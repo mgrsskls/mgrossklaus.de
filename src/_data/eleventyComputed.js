@@ -6,53 +6,53 @@ const markdownItFrontMatter = require("markdown-it-front-matter");
 const MD = markdownIt({ html: true }).use(markdownItFrontMatter, () => {});
 
 module.exports = {
-  permalink(data) {
-    if (data.permalink) return data.permalink;
+	permalink(data) {
+		if (data.permalink) return data.permalink;
 
-    if (data.page.inputPath.includes("webdev/")) {
-      return data.page.inputPath
-        .replace("webdev/", "")
-        .replace(".md", "/index.html");
-    }
+		if (data.page.inputPath.includes("webdev/")) {
+			return data.page.inputPath
+				.replace("webdev/", "")
+				.replace(".md", "/index.html");
+		}
 
-    return null;
-  },
+		return null;
+	},
 
-  layout({ page }) {
-    if (page.fileSlug === "feed") return null;
+	layout({ page }) {
+		if (page.fileSlug === "feed") return null;
 
-    if (page.filePathStem.includes("notes/")) return "note.html";
-    if (page.filePathStem.includes("records")) return null;
+		if (page.filePathStem.includes("notes/")) return "note-detail.html";
+		if (page.filePathStem.includes("records")) return null;
 
-    return "default.html";
-  },
+		return "index.html";
+	},
 
-  title(data) {
-    if (data.title) return data.title;
+	title(data) {
+		if (data.title) return data.title;
 
-    return "Michael Großklaus";
-  },
+		return "Michael Großklaus";
+	},
 
-  isNote(data) {
-    return data.layout === "note.html";
-  },
+	isNote(data) {
+		return data.layout === "note-detail.html";
+	},
 
-  excerpt(data) {
-    if (!data.blog) return null;
+	excerpt(data) {
+		if (!data.blog) return null;
 
-    const fileContent = fs.readFileSync(
-      path.join(process.cwd(), data.page.inputPath),
-      "utf8"
-    );
-    const tokens = MD.parse(fileContent, {});
+		const fileContent = fs.readFileSync(
+			path.join(process.cwd(), data.page.inputPath),
+			"utf8"
+		);
+		const tokens = MD.parse(fileContent, {});
 
-    const indexOpeningTag = tokens.findIndex(
-      ({ type, tag }) => type === "paragraph_open" && tag === "p"
-    );
+		const indexOpeningTag = tokens.findIndex(
+			({ type, tag }) => type === "paragraph_open" && tag === "p"
+		);
 
-    if (indexOpeningTag < 0) return null;
-    if (!tokens[indexOpeningTag + 1]?.content) return null;
+		if (indexOpeningTag < 0) return null;
+		if (!tokens[indexOpeningTag + 1]?.content) return null;
 
-    return MD.render(`${tokens[indexOpeningTag + 1].content} […]`);
-  },
+		return MD.render(`${tokens[indexOpeningTag + 1].content} […]`);
+	},
 };

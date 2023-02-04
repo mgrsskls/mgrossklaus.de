@@ -1,0 +1,13 @@
+.NoteDetail {
+	background: var(--color-bg);
+	padding-block: var(--spacing);
+	flex: 1;
+}
+
+.NoteDetail .Note-footer {
+	margin-block-start: var(--spacing);
+}
+
+.NoteDetail .Note-footer:not(:has(*)) {
+	margin-block-start: 0;
+}

@@ -1,0 +1,26 @@
+.NoteHeader {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	justify-content: space-between;
+	padding-block: 1rem;
+	border-block-end: var(--divider) var(--color-outline);
+}
+
+.NoteHeader-link {
+	display: flex;
+	align-items: center;
+	gap: var(--header-main-gap);
+	line-height: var(--header-main-line-height);
+	font-weight: var(--header-main-font-weight);
+	text-decoration: var(--header-main-text-decoration);
+	color: var(--header-main-color);
+}
+
+.NoteHeader-link:hover {
+	text-decoration: underline;
+}
+
+.NoteHeader-link picture {
+	flex-shrink: 0;
+}

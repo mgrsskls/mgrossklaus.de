@@ -1,81 +1,112 @@
 html {
-  --true:;
-  --false: initial;
+	--true: ;
+	--false: initial;
 
-  --light: var(--true);
+	--light: var(--true);
 
-  --color-light-scheme: var(--light) light;
-  --color-light-bg: var(--light) #fff;
-  --color-light-bg-code: var(--light) #f5f5f5;
-  --color-light-text: var(--light) #333;
-  --color-light-heading: var(--light) #134159;
-  --color-light-secondary: var(--light) #767676;
-  --color-light-light: var(--light) #eee;
-  --color-light-link: var(--light) hsl(321deg 81% 33%);
-  --color-light-tag-active: var(--light) #fff;
-  --color-light-divider: var(--light) #eee;
+	--color-light-scheme: var(--light) light;
+	--color-light-bg-code: var(--light) hsl(0, 0%, 96%);
+	--color-light-bg: var(--light) hsl(0, 0%, 100%);
+	--color-light-divider: var(--light) hsl(0, 0%, 92%);
+	--color-light-heading: var(--light) hsl(200, 65%, 20%);
+	--color-light-light: var(--light) hsl(0, 0%, 92%);
+	--color-light-link: var(--light) hsl(320, 80%, 32%);
+	--color-light-outline: var(--light) hsl(0, 0%, 82%);
+	--color-light-secondary: var(--light) hsl(0, 0%, 46%);
+	--color-light-tag-active: var(--light) hsl(0, 0%, 100%);
+	--color-light-tag-bg-active: var(--light) hsl(200, 65%, 20%);
+	--color-light-text: var(--light) hsl(0, 0%, 20%);
+	--color-light-theme-icon-active: var(--light) hsl(0, 0%, 100%);
+	--color-light-theme-icon: var(--light) hsl(200, 65%, 20%);
 
-  --color-dark-scheme: dark;
-  --color-dark-bg: hsl(203.5, 40.4%, 10%);
-  --color-dark-bg-code: hsl(203.5, 40.4%, 12%);
-  --color-dark-text: #eee;
-  --color-dark-heading: hsl(201deg 28% 70%);
-  --color-dark-secondary: hsl(217deg 12% 65%);
-  --color-dark-light: rgba(255, 255, 255, 0.1);
-  --color-dark-link: rgb(176, 118, 155);
-  --color-dark-tag-active: #000;
-  --color-dark-divider: #2e536b;
+	--color-dark-scheme: dark;
+	--color-dark-bg-code: hsl(204, 40%, 10%);
+	--color-dark-bg: hsl(204, 40%, 12%);
+	--color-dark-divider: hsl(204, 40%, 30%);
+	--color-dark-heading: hsl(200deg 28% 70%);
+	--color-dark-light: hsla(0, 0%, 100%, 0.1);
+	--color-dark-link: hsl(320, 25%, 65%);
+	--color-dark-outline: hsl(204, 40%, 24%);
+	--color-dark-secondary: hsl(218deg 12% 65%);
+	--color-dark-tag-active: hsl(0, 0%, 0%);
+	--color-dark-tag-bg-active: hsl(200deg 28% 70%);
+	--color-dark-text: hsl(0, 0%, 92%);
+	--color-dark-theme-icon-active: hsl(204, 40%, 10%);
+	--color-dark-theme-icon: hsl(200, 28%, 70%);
 
-  --color-scheme: var(--color-light-scheme, var(--color-dark-scheme));
-  --color-bg: var(--color-light-bg, var(--color-dark-bg));
-  --color-bg-code: var(--color-light-bg-code, var(--color-dark-bg-code));
-  --color-text: var(--color-light-text, var(--color-dark-text));
-  --color-heading: var(--color-light-heading, var(--color-dark-heading));
-  --color-secondary: var(--color-light-secondary, var(--color-dark-secondary));
-  --color-light: var(--color-light-light, var(--color-dark-light));
-  --color-link: var(--color-light-link, var(--color-dark-link));
-  --color-divider: var(--color-light-divider, var(--color-dark-divider));
-  --color-tag-active: var(
-    --color-light-tag-active,
-    var(--color-dark-tag-active)
-  );
+	--color-bg-code: var(--color-light-bg-code, var(--color-dark-bg-code));
+	--color-bg-dark: hsl(204, 40%, 10%);
+	--color-bg: var(--color-light-bg, var(--color-dark-bg));
+	--color-heading: var(--color-light-heading, var(--color-dark-heading));
+	--color-light: var(--color-light-light, var(--color-dark-light));
+	--color-link: var(--color-light-link, var(--color-dark-link));
+	--color-outline: var(--color-light-outline, var(--color-dark-outline));
+	--color-scheme: var(--color-light-scheme, var(--color-dark-scheme));
+	--color-secondary: var(--color-light-secondary, var(--color-dark-secondary));
+	--color-tag-active: var(
+		--color-light-tag-active,
+		var(--color-dark-tag-active)
+	);
+	--color-tag-bg-active: var(
+		--color-light-tag-bg-active,
+		var(--color-dark-tag-bg-active)
+	);
+	--color-text: var(--color-light-text, var(--color-dark-text));
+	--color-theme-icon-active: var(
+		--color-light-theme-icon-active,
+		var(--color-dark-theme-icon-active)
+	);
+	--color-theme-icon: var(
+		--color-light-theme-icon,
+		var(--color-dark-theme-icon)
+	);
 
-  --spacing: clamp(1rem, 3vw, 3rem);
+	--spacing: clamp(1rem, 3vw, 3rem);
+	--divider: 0.0625rem solid;
+	--border: 0.0625rem solid;
+	--border-radius: 0.25rem;
 
-  --divider: 0.0625em solid;
+	--header-main-gap: 1rem;
+	--header-main-color: #fff;
+	--header-main-line-height: 1.2;
+	--header-main-font-weight: 600;
+	--header-main-text-decoration: none;
 
-  accent-color: var(--color-link);
-  color-scheme: var(--color-scheme);
+	accent-color: var(--color-link);
+	color-scheme: var(--color-scheme);
 }
 
-.Section--about {
-  --color-text: var(--color-dark-text);
-  --color-divider: var(--color-dark-divider);
-  --color-link: var(--color-dark-link);
-  --color-code: var(--color-dark-code);
-  --color-heading: var(--color-dark-heading);
+.Section--about,
+.NoteHeader {
+	--color-code: var(--color-dark-code);
+	--color-heading: var(--color-dark-heading);
+	--color-link: var(--color-dark-link);
+	--color-text: var(--color-dark-text);
+	--color-theme-icon-active: var(--color-dark-theme-icon-active);
+	--color-theme-icon: var(--color-dark-theme-icon);
 
-  color-scheme: dark;
+	color-scheme: dark;
+	background: hsl(204, 40%, 10%);
 }
 
 .theme-light {
-  --light: var(--true);
+	--light: var(--true);
 }
 
 html:has([name="theme"][value="light"]:checked) {
-  --light: var(--true);
+	--light: var(--true);
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    --light: var(--false);
-  }
+	html {
+		--light: var(--false);
+	}
 }
 
 .theme-dark {
-  --light: var(--false);
+	--light: var(--false);
 }
 
 html:has([name="theme"][value="dark"]:checked) {
-  --light: var(--false);
+	--light: var(--false);
 }

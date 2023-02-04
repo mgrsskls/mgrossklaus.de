@@ -13,13 +13,6 @@
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="webmention" href="https://webmention.io/www.mgrossklaus.de/webmention" />
     <link rel="pingback" href="https://webmention.io/www.mgrossklaus.de/xmlrpc" />
-    <noscript>
-      <style>
-        .About-details summary {
-          display: list-item;
-        }
-      </style>
-    </noscript>
     <meta property="og:image" content="{{ origin }}/img/me-x2.jpg">
   </head>
   <body>
@@ -29,6 +22,32 @@
       document.querySelectorAll("time").forEach((time) => {
         time.textContent = new Date(time.dateTime).toLocaleDateString();
       });
+
+      function renderTheme(theme) {
+        if (!["auto", "light", "dark"].includes(theme)) return;
+
+        ["auto", "light", "dark"].forEach((option) => {
+          document.documentElement.classList.remove(
+            `theme-${option}`
+          );
+        });
+
+        const checkedInputs = Array.from(
+          document.querySelectorAll(`[name="theme"][value="${theme}"]`)
+        );
+
+        if (checkedInputs.length > 0) {
+          checkedInputs.forEach((checkedInput) => {
+            checkedInput.checked = true;
+          });
+
+          if (theme !== "auto") {
+            document.documentElement.classList.add(`theme-${theme}`);
+          }
+        }
+      }
+
+      renderTheme(localStorage.theme);
     </script>
   </body>
 </html>
