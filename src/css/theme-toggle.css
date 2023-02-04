@@ -1,13 +1,15 @@
 .ThemeToggle {
-  border: none;
-  padding: 0;
-  font-size: 0.875em;
+	border: none;
+	padding: 0;
+	font-size: 0.875em;
+	margin-inline: 0;
+	white-space: nowrap;
 }
 
 .ThemeToggle-title {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .ThemeToggle label {
-  color: var(--color-heading);
+	color: var(--color-heading);
 }

@@ -19,7 +19,7 @@
 	max-inline-size: 72ch;
 	margin-inline: auto;
 	padding-block-end: var(--spacing);
-	padding-inline: 1.5rem;
+	padding-inline: 1rem;
 }
 
 .NoteDetail-header {
@@ -35,7 +35,9 @@
 .NoteDetail-headerLink {
 	display: flex;
 	align-items: center;
-	gap: 1rem;
+	font-size: clamp(0.875rem, 3vw, 1rem);
+	gap: clamp(0.5rem, 2vw, 1rem);
+	line-height: 1.2;
 }
 
 .NoteDetail .Note-footer {
