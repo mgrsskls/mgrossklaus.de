@@ -1,39 +1,45 @@
 .Note-date {
-  font-size: 0.875em;
+	font-size: 0.875em;
 }
 
 .Note-title :is(h1, h2) {
-  margin-block: 0;
-  line-height: 1.2;
+	margin-block: 0;
+	line-height: 1.2;
 }
 
 .Note h1 {
-  font-size: 2em;
+	font-size: 2em;
 }
 
 .Note h2:not(:first-child) {
-  margin-block-start: 1.5em;
+	margin-block-start: 1.5em;
 }
 
 .NoteDetail {
-  max-inline-size: 72ch;
-  margin-inline: auto;
-  padding-block: 0 2rem;
-  padding-inline: 1.5rem;
+	max-inline-size: 72ch;
+	margin-inline: auto;
+	padding-block-end: var(--spacing);
+	padding-inline: 1.5rem;
 }
 
 .NoteDetail-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  justify-content: space-between;
-  margin-block-end: var(--spacing);
-  padding-block: calc(var(--spacing) / 2);
-  border-block-end: var(--divider) var(--color-light);
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	justify-content: space-between;
+	margin-block-end: var(--spacing);
+	padding-block: calc(var(--spacing) / 2);
+	border-block-end: var(--divider) var(--color-light);
 }
 
 .NoteDetail-headerLink {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.NoteDetail .Note-footer {
+	border-block-start: var(--divider) var(--color-light);
+	margin-block-start: var(--spacing);
+	padding-block-start: var(--spacing);
 }
