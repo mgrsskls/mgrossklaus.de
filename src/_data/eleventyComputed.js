@@ -53,6 +53,6 @@ module.exports = {
     if (indexOpeningTag < 0) return null;
     if (!tokens[indexOpeningTag + 1]?.content) return null;
 
-    return MD.render(tokens[indexOpeningTag + 1].content);
+    return MD.render(`${tokens[indexOpeningTag + 1].content} […]`);
   },
 };
