@@ -7,6 +7,11 @@
     <script src="/js/share.js" defer></script>
     <script src="/js/theme-toggle.js" defer></script>
     <link href="/css/common.css" rel="stylesheet" />
+    {% if css %}
+      <link href="/css/{{ css }}" rel="stylesheet" />
+    {% else %}
+      <link href="/css/note-detail.css" rel="stylesheet" />
+    {% endif %}
     <link rel="alternate" type="application/rss+xml" title="Michael Großklaus" href="/feed.xml" />
     <meta name="description" content="Michael Großklaus is a Hamburg, Germany based frontend developer." />
     <link rel="icon" href="/favicon.ico" sizes="any" />

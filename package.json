@@ -1,29 +1,29 @@
 {
-  "name": "mgrossklaus.de",
-  "version": "1.0.0",
-  "config": {
-    "css": "postcss src/css/common.css src/css/records.css --dir dist/css"
-  },
-  "scripts": {
-    "dev": "eleventy --serve",
-    "build": "npm run build:css && npm run build:11ty",
-    "build:11ty": "eleventy",
-    "build:css": "NODE_ENV=production $npm_package_config_css"
-  },
-  "author": "Michael Großklaus",
-  "license": "MIT",
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-fetch": "^3.0.0",
-    "@11ty/eleventy-img": "^2.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "cssnano": "^5.1.14",
-    "html-minifier": "^4.0.0",
-    "jsdom": "^20.0.3",
-    "markdown-it-front-matter": "^0.2.3",
-    "postcss": "^8.4.18",
-    "postcss-cli": "^10.0.0",
-    "postcss-import": "^15.0.0"
-  }
+	"name": "mgrossklaus.de",
+	"version": "1.0.0",
+	"config": {
+		"css": "postcss src/css/common.css src/css/index.css src/css/note-detail.css src/css/records.css --dir dist/css"
+	},
+	"scripts": {
+		"dev": "eleventy --serve",
+		"build": "npm run build:css && npm run build:11ty",
+		"build:11ty": "eleventy",
+		"build:css": "NODE_ENV=production $npm_package_config_css"
+	},
+	"author": "Michael Großklaus",
+	"license": "MIT",
+	"devDependencies": {
+		"@11ty/eleventy": "^1.0.2",
+		"@11ty/eleventy-fetch": "^3.0.0",
+		"@11ty/eleventy-img": "^2.0.1",
+		"@11ty/eleventy-plugin-rss": "^1.2.0",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+		"cssnano": "^5.1.14",
+		"html-minifier": "^4.0.0",
+		"jsdom": "^20.0.3",
+		"markdown-it-front-matter": "^0.2.3",
+		"postcss": "^8.4.18",
+		"postcss-cli": "^10.0.0",
+		"postcss-import": "^15.0.0"
+	}
 }
