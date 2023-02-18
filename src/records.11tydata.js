@@ -1,6 +1,8 @@
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function () {
+  if (!process.env.DISCOGS_TOKEN) return {};
+
   const firstPage = await fetchData();
 
   let records = [...firstPage.releases];
