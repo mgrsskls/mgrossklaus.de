@@ -1,4 +1,7 @@
 .WebMentions {
+	--img-size: 2rem;
+	--gap: 0.5rem;
+
 	margin-block-start: var(--spacing);
 	border-block-start: var(--divider) var(--color-outline);
 	padding-block-start: var(--spacing);
@@ -24,17 +27,19 @@
 .WebMention-header {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
+	gap: var(--gap);
+	font-weight: bold;
 }
 
 .WebMention-header img {
 	background: var(--color-secondary);
 	aspect-ratio: 1;
-	block-size: 2rem;
+	block-size: var(--img-size);
 }
 
 .WebMention-content {
 	color: var(--color-secondary);
+	margin-inline-start: calc(var(--img-size) + var(--gap));
 }
 
 @media (max-width: 64em) {
