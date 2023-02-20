@@ -8,7 +8,21 @@ class WebMentions extends HTMLElement {
 			)}`
 		)
 			.then((response) => response.json())
-			.then((json) => this.render(json))
+			.then((json) => {
+				console.log(json.children);
+				this.results = {
+					reposts: json.children.filter(
+						(child) => child["wm-property"] === "repost-of"
+					),
+					likes: json.children.filter(
+						(child) => child["wm-property"] === "like-of"
+					),
+					replies: json.children.filter(
+						(child) => child["wm-property"] === "in-reply-to"
+					),
+				};
+				this.render(json);
+			})
 			.catch((e) => console.error(e.toString()));
 	}
 
@@ -19,64 +33,92 @@ class WebMentions extends HTMLElement {
 
 		element.classList.add("WebMentions");
 
-		element.innerHTML = `
-      <h2 class="WebMentions-heading">Webmentions</h2>
-      <ol class="WebMentions-list">
-        ${this.getItems(children)}
-      </ol>
-    `;
+		element.innerHTML = "";
+
+		if (this.results.reposts.length > 0) {
+			element.innerHTML += this.getSimpleHtml(
+				this.results.reposts,
+				"repost",
+				"reposts"
+			);
+		}
+
+		if (this.results.likes.length > 0) {
+			element.innerHTML += this.getSimpleHtml(
+				this.results.likes,
+				"like",
+				"likes"
+			);
+		}
+
+		if (this.results.replies.length > 0) {
+			element.innerHTML += `
+				${this.getHeadingHtml(this.results.replies.length, "reply", "replies")}
+				<ol class="WebMentions-list WebMentions-list--replies">
+					${this.getReplies(this.results.replies)}
+				</ol>
+			`;
+		}
 
 		this.appendChild(element);
 	}
 
-	getItems(children) {
+	getSimpleHtml(list, headingSingular, headingPlural) {
+		return `
+			${this.getHeadingHtml(list.length, headingSingular, headingPlural)}
+			<ol class="WebMentions-list WebMentions-list--simple">
+				${list
+					.map(
+						(item) => `
+						<li class="WebMentions-item">
+							<a href="${item.url}">
+								<img class="WebMention-img" src="${item.author.photo}" alt="${item.author.name}">
+							</a>
+						</li>
+					`
+					)
+					.join("")}
+			</ol>
+		`;
+	}
+
+	getHeadingHtml(length, headingSingular, headingPlural) {
+		return `<h2 class="WebMentions-type">${length} ${
+			length === 1 ? headingSingular : headingPlural
+		}</h2>`;
+	}
+
+	getReplies(children) {
 		let html = "";
 
 		children.forEach((webMention) => {
-			console.log(webMention);
 			html += `
-        <li class="WebMentions-item">
-          ${this.getHtml({
+				<li class="WebMentions-item">
+					${this.getReplyHtml({
 						author: webMention.author,
-						type: webMention["wm-property"],
-						url: webMention.url,
 						text: webMention.content?.html,
 					})}
-        </li>
-      `;
+				</li>
+			`;
 		});
 
 		return html;
 	}
 
-	getHtml({ author, type, url, text }) {
+	getReplyHtml({ author, text }) {
 		return `
-      <div class="WebMention">
-        <div class="WebMention-header">
-          <img src="${author.photo}" alt="" aria-hidden="true">
-          <a href="${author.url}">
-            ${author.name}
-          </a>
-        </div>
-        <div class="WebMention-content">
-          ${this.getContent({ type, url, text })}
-        </div>
-      </div>
-    `;
-	}
-
-	getContent({ type, url, text }) {
-		if (type === "like-of") {
-			return `<p><i>liked via <a href="${url}">${url}</a></i></p>`;
-		}
-
-		if (type === "in-reply-to") {
-			return text;
-		}
-
-		if (type === "repost-of") {
-			return `<p><i>reposted via <a href="${url}">${url}</a></i></p>`;
-		}
+			<div class="WebMention">
+				<div class="WebMention-header">
+					<img class="WebMention-img" src="${author.photo}" alt="" aria-hidden="true">
+					<a href="${author.url}">
+						${author.name}
+					</a>
+				</div>
+				<div class="WebMention-content">
+					${text}
+				</div>
+			</div>
+		`;
 	}
 }
 

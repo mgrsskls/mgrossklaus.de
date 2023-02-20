@@ -11,17 +11,33 @@
 	margin-block-start: 0;
 }
 
+.WebMentions-type {
+	font-size: 1rem;
+}
+
+.WebMentions-type:not(:first-child) {
+	margin-block-start: 2rem;
+}
+
 .WebMentions-list {
+	display: flex;
 	padding-inline-start: 0;
 	margin-block: 0;
 }
 
-.WebMentions-item {
-	list-style: none;
+.WebMentions-list--simple {
+	flex-wrap: wrap;
+	gap: 0.5rem;
 }
 
-.WebMentions-item + .WebMentions-item {
-	margin-block-start: 2rem;
+.WebMentions-list--replies {
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.WebMentions-item {
+	list-style: none;
+	flex-shrink: 0;
 }
 
 .WebMention-header {
@@ -31,7 +47,7 @@
 	font-weight: bold;
 }
 
-.WebMention-header img {
+.WebMention-img {
 	background: var(--color-secondary);
 	aspect-ratio: 1;
 	block-size: var(--img-size);
