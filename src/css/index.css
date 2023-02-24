@@ -1,6 +1,7 @@
 @import "./index/about.css";
 @import "./index/layout.css";
 @import "./index/notes.css";
+@import "./index/pagination.css";
 
 html:has([name="theme"][value="dark"]:checked)
 	body:has(.About-toggle[aria-expanded="true"])

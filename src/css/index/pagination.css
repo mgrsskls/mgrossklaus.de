@@ -1,0 +1,20 @@
+.Pagination {
+	display: flex;
+	justify-content: space-between;
+	gap: 2rem;
+	margin-block-start: var(--spacing);
+	border-block-start: var(--divider) var(--color-outline);
+	padding-block-start: var(--spacing);
+}
+
+.Pagination a {
+	text-decoration: none;
+}
+
+.Pagination span {
+	text-decoration: underline;
+}
+
+.Pagination [rel="next"] {
+	margin-inline-start: auto;
+}

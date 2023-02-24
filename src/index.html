@@ -1,5 +1,24 @@
 ---
 layout: index.html
 css: index.css
+pagination:
+  data: collections.notes
+  size: 12
+  reverse: true
+permalink: "{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
-{% include "./_notes.html" notes: collections.notes %}
+{% include "./_notes.html" notes: pagination.items %}
+
+<nav class="Pagination" aria-label="pagination">
+  {% if pagination.href.previous %}
+    <a rel="prev" href="{{ pagination.href.previous }}">
+        &larr; <span>Previous</span>
+    </a>
+  {% endif %}
+
+  {% if pagination.href.next %}
+    <a rel="next" href="{{ pagination.href.next }}">
+        <span>Next</span> &rarr;
+    </a>
+  {% endif %}
+</nav>

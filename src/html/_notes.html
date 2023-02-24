@@ -3,8 +3,14 @@
 
   {% include "./_tags.html" tags: collections.tagList, showAll: true %}
 
+  {% if reverse_notes %}
+    {% assign data = notes | reverse %}
+    {% else %}
+    {% assign data = notes %}
+  {% endif %}
+
   <ol class="Notes-list" role="list">
-    {% for note in notes reversed %}
+    {% for note in data %}
       <li class="Notes-item">
         {% if note.data.blog %}
           {% capture content %}
