@@ -6,7 +6,7 @@ til: true
 source: https://yaml-multiline.info
 ---
 
-There are different indicators to define how multiline strings behave.
+There are different indicators to define how multiline strings in YAML files behave.
 
 _Block style indicators_ describe how line breaks behave: With a `|` (_literal_ style) they are kept as a line break.
 With a `>` (_folded_ style) they are converted to a space.
