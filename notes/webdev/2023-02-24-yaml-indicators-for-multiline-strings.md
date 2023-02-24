@@ -1,5 +1,5 @@
 ---
-title: YAML indicators for multiline string
+title: YAML indicators for multiline strings
 tags:
   - yaml
 til: true
