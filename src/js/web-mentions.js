@@ -9,7 +9,6 @@ class WebMentions extends HTMLElement {
 		)
 			.then((response) => response.json())
 			.then((json) => {
-				console.log(json.children);
 				this.results = {
 					reposts: json.children.filter(
 						(child) => child["wm-property"] === "repost-of"
