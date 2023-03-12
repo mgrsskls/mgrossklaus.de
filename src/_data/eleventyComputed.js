@@ -21,10 +21,25 @@ module.exports = {
 	layout({ page }) {
 		if (page.fileSlug === "feed") return null;
 
-		if (page.filePathStem.includes("notes/")) return "note-detail.html";
+		if (page.filePathStem.includes("notes/")) return "note.html";
 		if (page.filePathStem.includes("records")) return null;
 
-		return "index.html";
+		return "html.html";
+	},
+
+	css({ page }) {
+		if (["/index", "/tag"].includes(page.filePathStem)) return "index.css";
+		if (page.filePathStem.includes("notes/")) return "note.css";
+	},
+
+	active({ page }) {
+		if (page.filePathStem === "/work") return "work";
+		if (page.filePathStem === "/about") return "about";
+		if (
+			["/index", "/tag"].includes(page.filePathStem) ||
+			page.filePathStem.includes("notes/")
+		)
+			return "notes";
 	},
 
 	title(data) {

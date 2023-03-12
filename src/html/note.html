@@ -1,0 +1,16 @@
+---
+layout: html.html
+---
+
+<script src="/js/web-mentions.js" defer></script>
+
+{%
+  include "./_note.html"
+  content: content,
+  date: page.date,
+  isDetailView: true,
+  path: page.url,
+  source: source,
+  til: til,
+  title: title,
+%}

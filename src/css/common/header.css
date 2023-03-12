@@ -1,13 +1,29 @@
-.NoteHeader {
+.Header {
+	--light: var(--false);
+	--color-heading: var(--c-d-heading);
+	--color-link: var(--c-d-link);
+	--color-text: var(--c-d-text);
+	--color-theme-icon-active: var(--c-d-theme-icon-active);
+	--color-theme-icon: var(--c-d-theme-icon);
+
+	background: var(--color-bg-header);
 	display: flex;
 	align-items: center;
 	gap: 1rem;
 	justify-content: space-between;
 	padding-block: 1rem;
 	border-block-end: var(--divider) var(--color-outline);
+	position: sticky;
+	inset-block-start: 0;
+	z-index: 1;
 }
 
-.NoteHeader-link {
+.Header-name {
+	font-size: 1rem;
+	margin: 0;
+}
+
+.Header-link {
 	display: flex;
 	align-items: center;
 	gap: var(--header-main-gap);
@@ -17,10 +33,10 @@
 	color: var(--header-main-color);
 }
 
-.NoteHeader-link:hover {
+.Header-link:hover {
 	text-decoration: underline;
 }
 
-.NoteHeader-link picture {
+.Header-link picture {
 	flex-shrink: 0;
 }

@@ -1,12 +1,12 @@
 ---
-layout: index.html
-css: index.css
+layout: html.html
 pagination:
   data: collections.notes
-  size: 12
+  size: 10
   reverse: true
 permalink: "{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber | plus: 1 }}/{% endif %}index.html"
 ---
+
 {% include "./_notes.html" notes: pagination.items %}
 
 <nav class="Pagination" aria-label="pagination">

@@ -4,64 +4,58 @@ html {
 
 	--light: var(--true);
 
-	--color-light-scheme: var(--light) light;
-	--color-light-bg-code: var(--light) hsl(0, 0%, 96%);
-	--color-light-bg: var(--light) hsl(0, 0%, 100%);
-	--color-light-divider: var(--light) hsl(0, 0%, 92%);
-	--color-light-heading: var(--light) hsl(200, 65%, 20%);
-	--color-light-light: var(--light) hsl(0, 0%, 92%);
-	--color-light-link: var(--light) hsl(320, 80%, 32%);
-	--color-light-outline: var(--light) hsl(0, 0%, 82%);
-	--color-light-secondary: var(--light) hsl(0, 0%, 46%);
-	--color-light-tag-active: var(--light) hsl(0, 0%, 100%);
-	--color-light-tag-bg-active: var(--light) hsl(200, 65%, 20%);
-	--color-light-text: var(--light) hsl(0, 0%, 20%);
-	--color-light-theme-icon-active: var(--light) hsl(0, 0%, 100%);
-	--color-light-theme-icon: var(--light) hsl(200, 65%, 20%);
+	--color-h: 204;
+	--color-s: 30%;
 
-	--color-dark-scheme: dark;
-	--color-dark-bg-code: hsl(204, 40%, 10%);
-	--color-dark-bg: hsl(204, 40%, 12%);
-	--color-dark-divider: hsl(204, 40%, 30%);
-	--color-dark-heading: hsl(200deg 28% 70%);
-	--color-dark-light: hsla(0, 0%, 100%, 0.1);
-	--color-dark-link: hsl(320, 25%, 65%);
-	--color-dark-outline: hsl(204, 40%, 24%);
-	--color-dark-secondary: hsl(218deg 12% 65%);
-	--color-dark-tag-active: hsl(0, 0%, 0%);
-	--color-dark-tag-bg-active: hsl(200deg 28% 70%);
-	--color-dark-text: hsl(0, 0%, 92%);
-	--color-dark-theme-icon-active: hsl(204, 40%, 10%);
-	--color-dark-theme-icon: hsl(200, 28%, 70%);
+	--color-scheme: var(--light) light;
+	--c-l-bg-code: var(--light) hsl(var(--color-h), var(--color-s), 96%);
+	--c-l-bg-header: var(--light) hsl(var(--color-h), var(--color-s), 10%);
+	--c-l-bg: var(--light) hsl(var(--color-h), var(--color-s), 100%);
+	--c-l-outline: var(--light) hsl(var(--color-h), var(--color-s), 82%);
+	--c-l-secondary: var(--light) hsl(var(--color-h), var(--color-s), 45%);
+	--c-l-tag-active: var(--light) hsl(var(--color-h), var(--color-s), 100%);
+	--c-l-text: var(--light) hsl(var(--color-h), var(--color-s), 20%);
+	--c-l-theme-icon-active: var(--light)
+		hsl(var(--color-h), var(--color-s), 100%);
+	--c-l-heading: var(--light) hsl(200, 65%, 20%);
+	--c-l-theme-icon: var(--light) hsl(200, 65%, 20%);
+	--c-l-tag-bg-active: var(--light) hsl(200, 65%, 20%);
+	--c-l-link: var(--light) hsl(320, 80%, 25%);
 
-	--color-bg-code: var(--color-light-bg-code, var(--color-dark-bg-code));
-	--color-bg-dark: hsl(204, 40%, 10%);
-	--color-bg: var(--color-light-bg, var(--color-dark-bg));
-	--color-heading: var(--color-light-heading, var(--color-dark-heading));
-	--color-light: var(--color-light-light, var(--color-dark-light));
-	--color-link: var(--color-light-link, var(--color-dark-link));
-	--color-outline: var(--color-light-outline, var(--color-dark-outline));
-	--color-scheme: var(--color-light-scheme, var(--color-dark-scheme));
-	--color-secondary: var(--color-light-secondary, var(--color-dark-secondary));
-	--color-tag-active: var(
-		--color-light-tag-active,
-		var(--color-dark-tag-active)
-	);
-	--color-tag-bg-active: var(
-		--color-light-tag-bg-active,
-		var(--color-dark-tag-bg-active)
-	);
-	--color-text: var(--color-light-text, var(--color-dark-text));
+	--c-d-scheme: dark;
+	--c-d-bg-code: hsl(var(--color-h), var(--color-s), 14%);
+	--c-d-bg-header: hsl(var(--color-h), var(--color-s), 10%);
+	--c-d-bg: hsl(var(--color-h), var(--color-s), 12%);
+	--c-d-outline: hsl(var(--color-h), var(--color-s), 24%);
+	--c-d-secondary: hsl(var(--color-h), var(--color-s), 75%);
+	--c-d-tag-active: hsl(var(--color-h), var(--color-s), 10%);
+	--c-d-text: hsl(var(--color-h), var(--color-s), 92%);
+	--c-d-theme-icon-active: hsl(var(--color-h), var(--color-s), 10%);
+	--c-d-heading: hsl(200, 50%, 80%);
+	--c-d-theme-icon: hsl(200, 50%, 80%);
+	--c-d-tag-bg-active: hsl(200, 50%, 80%);
+	--c-d-link: hsl(320, 40%, 75%);
+
+	--color-bg-code: var(--c-l-bg-code, var(--c-d-bg-code));
+	--color-bg-header: var(--c-l-bg-header, var(--c-d-bg-header));
+	--color-bg: var(--c-l-bg, var(--c-d-bg));
+	--color-outline: var(--c-l-outline, var(--c-d-outline));
+	--color-secondary: var(--c-l-secondary, var(--c-d-secondary));
+	--color-tag-active: var(--c-l-tag-active, var(--c-d-tag-active));
+	--color-text: var(--c-l-text, var(--c-d-text));
 	--color-theme-icon-active: var(
-		--color-light-theme-icon-active,
-		var(--color-dark-theme-icon-active)
+		--c-l-theme-icon-active,
+		var(--c-d-theme-icon-active)
 	);
-	--color-theme-icon: var(
-		--color-light-theme-icon,
-		var(--color-dark-theme-icon)
-	);
+	--color-heading: var(--c-l-heading, var(--c-d-heading));
+	--color-theme-icon: var(--c-l-theme-icon, var(--c-d-theme-icon));
+	--color-tag-bg-active: var(--c-l-tag-bg-active, var(--c-d-tag-bg-active));
+	--color-link: var(--c-l-link, var(--c-d-link));
+
+	--color-scheme: var(--color-scheme, var(--c-d-scheme));
 
 	--spacing: clamp(1rem, 3vw, 3rem);
+	--spacing-l: clamp(2rem, 3vw, 3rem);
 	--divider: 0.0625rem solid;
 	--border: 0.0625rem solid;
 	--border-radius: 0.25rem;
@@ -74,19 +68,6 @@ html {
 
 	accent-color: var(--color-link);
 	color-scheme: var(--color-scheme);
-}
-
-.Section--about,
-.NoteHeader {
-	--color-code: var(--color-dark-code);
-	--color-heading: var(--color-dark-heading);
-	--color-link: var(--color-dark-link);
-	--color-text: var(--color-dark-text);
-	--color-theme-icon-active: var(--color-dark-theme-icon-active);
-	--color-theme-icon: var(--color-dark-theme-icon);
-
-	color-scheme: dark;
-	background: hsl(204, 40%, 10%);
 }
 
 .theme-light {

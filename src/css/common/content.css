@@ -1,0 +1,10 @@
+.Content {
+	padding-block: var(--spacing-l);
+	flex: 1;
+}
+
+.Content-intro {
+	margin-block: 0 var(--spacing);
+	color: var(--color-heading);
+	font-weight: 600;
+}

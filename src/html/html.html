@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <script src="/js/share.js" defer></script>
     <script src="/js/theme-toggle.js" defer></script>
-    <link href="/css/common.css" rel="stylesheet" />
+    <link href="/css/common.css" rel="stylesheet">
     {% if css %}
-      <link href="/css/{{ css }}" rel="stylesheet" />
-    {% else %}
-      <link href="/css/note-detail.css" rel="stylesheet" />
+      <link href="/css/{{ css }}" rel="stylesheet">
     {% endif %}
-    <link rel="alternate" type="application/rss+xml" title="Michael Großklaus" href="/feed.xml" />
-    <meta name="description" content="Michael Großklaus is a Hamburg, Germany based frontend developer." />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="webmention" href="https://webmention.io/www.mgrossklaus.de/webmention" />
-    <link rel="pingback" href="https://webmention.io/www.mgrossklaus.de/xmlrpc" />
+    <link rel="alternate" type="application/rss+xml" title="Michael Großklaus" href="/feed.xml">
+    <meta name="description" content="Michael Großklaus is a Hamburg, Germany based frontend developer.">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="webmention" href="https://webmention.io/www.mgrossklaus.de/webmention">
+    <link rel="pingback" href="https://webmention.io/www.mgrossklaus.de/xmlrpc">
     <meta property="og:image" content="{{ origin }}/img/me-x2.jpg">
+    <meta name="theme-color" content="#141B20">
   </head>
   <body>
-    {{ content }}
+    {% include "_header.html" %}
+    {% include "_nav.html" active: active %}
+
+    <div class="Content">
+      <div class="u-container">
+        {{ content }}
+      </div>
+    </div>
 
     <script>
       document.querySelectorAll("time").forEach((time) => {

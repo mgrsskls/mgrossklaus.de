@@ -2,9 +2,9 @@
 	display: flex;
 	justify-content: space-between;
 	gap: 2rem;
-	margin-block-start: var(--spacing);
+	margin-block-start: var(--spacing-l);
+	padding-block-start: var(--spacing-l);
 	border-block-start: var(--divider) var(--color-outline);
-	padding-block-start: var(--spacing);
 }
 
 .Pagination a {

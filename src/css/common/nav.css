@@ -1,0 +1,22 @@
+.Nav-list {
+	display: flex;
+	gap: 2em;
+	list-style: none;
+	padding-inline: 0;
+	margin: 0;
+}
+
+.Nav-link {
+	display: block;
+	padding: 0.5em 0;
+	text-decoration: none;
+}
+
+.Nav-link[aria-current="true"] {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.Nav-link:hover {
+	text-decoration: underline;
+}

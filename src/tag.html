@@ -1,12 +1,11 @@
 ---
+layout: html.html
 pagination:
   data: collections
   size: 1
   alias: tag
 permalink: /tags/{{ tag }}/
 eleventyExcludeFromCollections: true
-layout: index.html
-css: index.css
 ---
 
 {% include "./_notes.html" notes: collections[tag], reverse_notes: true %}

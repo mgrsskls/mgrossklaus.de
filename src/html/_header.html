@@ -1,0 +1,25 @@
+<header class="Header">
+  <div class="u-container">
+    <div class="u-flex u-gap u-spaceBetween u-alignCenter">
+      <h1 class="Header-name">
+        <a class="Header-link" href="/" rel="me">
+          <picture>
+            <source srcset="/img/me-x2.avif" type="image/avif">
+            <source srcset="/img/me-x2.webp" type="image/webp">
+            <img
+            src="/img/me-x2.jpg"
+            alt="Profile picture of Michael Großklaus"
+            width="40"
+            height="40"
+            fetchpriority="high"
+            class="About-img"
+            >
+          </picture>
+          Michael Großklaus
+        </a>
+      </h1>
+
+      {% include "_settings.html" %}
+    </div>
+  </div>
+</header>

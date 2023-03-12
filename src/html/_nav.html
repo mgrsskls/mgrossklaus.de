@@ -1,0 +1,13 @@
+<nav class="Nav">
+  <ul class="Nav-list u-container">
+    <li>
+      <a{% if active == "notes" %} aria-current="true"{% endif %} class="Nav-link" href="/">Notes</a>
+    </li>
+    <li>
+      <a{% if active == "work" %} aria-current="true"{% endif %} class="Nav-link" href="/work">Work</a>
+    </li>
+    <li>
+      <a{% if active == "about" %} aria-current="true"{% endif %} class="Nav-link" href="/about">About</a>
+    </li>
+  </ul>
+</nav>
