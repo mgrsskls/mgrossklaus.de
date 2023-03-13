@@ -31,6 +31,7 @@
 	font-weight: var(--header-main-font-weight);
 	text-decoration: var(--header-main-text-decoration);
 	color: var(--header-main-color);
+	padding-inline-end: var(--header-main-gap);
 }
 
 .Header-link:hover {
@@ -39,4 +40,8 @@
 
 .Header-link picture {
 	flex-shrink: 0;
+}
+
+.Header-link img {
+	border-radius: var(--border-radius);
 }

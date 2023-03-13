@@ -4,9 +4,7 @@
 	display: flex;
 	border: none;
 	padding: 0;
-	font-size: 0.875em;
 	margin-inline: 0;
-	white-space: nowrap;
 }
 
 .ThemeToggle-wrapper {
@@ -26,8 +24,14 @@
 	color: var(--color-theme-icon-active);
 }
 
+:is(a, input, button):focus-visible,
+.ThemeToggle input:focus + label {
+	outline: 0.125rem solid var(--color-link);
+	outline-offset: 0.125rem;
+}
+
 .ThemeToggle-icon {
-	--size: 1.2rem;
+	--size: 1.25rem;
 
 	display: block;
 	inline-size: var(--size);
