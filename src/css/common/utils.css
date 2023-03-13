@@ -29,7 +29,7 @@
 
 .u-container {
 	margin-inline: auto;
-	max-inline-size: 72ch;
+	max-inline-size: 48em;
 	padding-inline: var(--spacing);
 	inline-size: 100%;
 }

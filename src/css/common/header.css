@@ -11,7 +11,7 @@
 	align-items: center;
 	gap: 1rem;
 	justify-content: space-between;
-	padding-block: 1rem;
+	padding-block: 0.75rem;
 	border-block-end: var(--divider) var(--color-outline);
 	position: sticky;
 	inset-block-start: 0;
