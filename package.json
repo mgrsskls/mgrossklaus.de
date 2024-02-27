@@ -22,7 +22,7 @@
 		"html-minifier": "^4.0.0",
 		"jsdom": "^21.1.0",
 		"markdown-it-front-matter": "^0.2.3",
-		"postcss": "^8.4.21",
+		"postcss": "^8.4.31",
 		"postcss-cli": "^10.1.0",
 		"postcss-import": "^15.1.0"
 	}
