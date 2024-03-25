@@ -24,6 +24,6 @@
 		"markdown-it-front-matter": "^0.2.3",
 		"postcss": "^8.4.38",
 		"postcss-cli": "^11.0.0",
-		"postcss-import": "^16.0.1"
+		"postcss-import": "^16.1.0"
 	}
 }
