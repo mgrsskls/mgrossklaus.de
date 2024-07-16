@@ -1,5 +1,5 @@
 ---
-title: `storage` event for localStorage updates
+title: "`storage` event for localStorage updates"
 tags:
   - javascript
 til: true
