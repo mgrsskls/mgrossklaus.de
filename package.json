@@ -2,7 +2,7 @@
 	"name": "mgrossklaus.de",
 	"version": "1.0.0",
 	"config": {
-		"css": "postcss src/css/common.css src/css/index.css src/css/note.css src/css/records.css --dir dist/css"
+		"css": "postcss src/css/common.css src/css/index.css src/css/note.css --dir dist/css"
 	},
 	"engines": {
 		"node": "~20.12.2"

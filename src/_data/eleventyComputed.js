@@ -22,7 +22,6 @@ module.exports = {
 		if (page.fileSlug === "feed") return null;
 
 		if (page.filePathStem.includes("notes/")) return "note.html";
-		if (page.filePathStem.includes("records")) return null;
 
 		return "html.html";
 	},
