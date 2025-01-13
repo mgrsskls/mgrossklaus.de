@@ -23,7 +23,7 @@
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"cssnano": "^7.0.6",
 		"html-minifier": "^4.0.0",
-		"jsdom": "^25.0.1",
+		"jsdom": "^26.0.0",
 		"markdown-it-front-matter": "^0.2.4",
 		"postcss": "^8.4.49",
 		"postcss-cli": "^11.0.0",
