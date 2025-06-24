@@ -1,54 +1,55 @@
-const Image = require("@11ty/eleventy-img");
-const path = require("path");
-const jsdom = require("jsdom");
+import Image from "@11ty/eleventy-img";
+import path from "path";
+import jsdom from "jsdom";
 
 const { JSDOM } = jsdom;
 
-module.exports = function transformImages(
-  htmlString,
-  filePath,
-  outputDir,
-  inputDir
+export default function transformImages(
+	htmlString,
+	filePath,
+	outputDir,
+	inputDir
 ) {
-  if (filePath?.endsWith(".html") && htmlString.includes("<img")) {
-    const { document } = new JSDOM(htmlString).window;
-    const promises = [];
+	if (filePath?.endsWith(".html") && htmlString.includes("<img")) {
+		const { document } = new JSDOM(htmlString).window;
+		const promises = [];
 
-    document.querySelectorAll("article img").forEach(async (image) => {
-      if (image.src.endsWith(".jpg") || image.src.endsWith(".png")) {
-        const articlePath = image.closest("article").dataset.url;
-        promises.push(
-          new Promise((resolve) => {
-            getImageHTML({
-              imageSrc: articlePath
-                ? path.join(process.cwd(), inputDir, articlePath, image.src)
-                : path.join(
-                    process.cwd(),
-                    path.dirname(filePath.replace(outputDir, inputDir)),
-                    image.src
-                  ),
-              attrs: image.attributes,
-              outputDir,
-              inputDir,
-            })
-              .then((result) => {
-                // eslint-disable-next-line no-param-reassign
-                image.outerHTML = result;
-                resolve();
-              })
-              .catch((e) => console.error(e));
-          })
-        );
-      }
-    });
+		document.querySelectorAll("article img").forEach(async (image) => {
+			if (image.src.endsWith(".jpg") || image.src.endsWith(".png")) {
+				const articlePath = image.closest("article").dataset.url;
 
-    return Promise.all(promises).then(async () => {
-      return `<!DOCTYPE html>${document.documentElement.outerHTML}`;
-    });
-  }
+				promises.push(
+					new Promise((resolve) => {
+						getImageHTML({
+							imageSrc: articlePath
+								? path.join(process.cwd(), inputDir, articlePath, image.src)
+								: path.join(
+										process.cwd(),
+										path.dirname(filePath.replace(outputDir, inputDir)),
+										image.src
+								  ),
+							attrs: image.attributes,
+							outputDir,
+							inputDir,
+						})
+							.then((result) => {
+								// eslint-disable-next-line no-param-reassign
+								image.outerHTML = result;
+								resolve();
+							})
+							.catch((e) => console.error(e));
+					})
+				);
+			}
+		});
 
-  return htmlString;
-};
+		return Promise.all(promises).then(async () => {
+			return `<!DOCTYPE html>${document.documentElement.outerHTML}`;
+		});
+	}
+
+	return htmlString;
+}
 
 /**
  * @param {object} o
@@ -59,46 +60,45 @@ module.exports = function transformImages(
  * @returns {Promise<string>}
  */
 async function getImageHTML({ imageSrc, attrs, outputDir, inputDir }) {
-  let attrStr = "";
+	let attrStr = "";
 
-  Array.from(attrs).forEach((attr) => {
-    if (attr.nodeName !== "src") {
-      attrStr += ` ${attr.nodeName}="${attr.nodeValue}"`;
-    }
-  });
+	Array.from(attrs).forEach((attr) => {
+		if (attr.nodeName !== "src") {
+			attrStr += ` ${attr.nodeName}="${attr.nodeValue}"`;
+		}
+	});
 
-  attrStr += ' loading="lazy" decoding="async"';
+	attrStr += ' loading="lazy" decoding="async"';
 
-  const originalType = imageSrc.endsWith(".png") ? "png" : "jpeg";
+	const originalType = imageSrc.endsWith(".png") ? "png" : "jpeg";
+	const metadata = await Image(imageSrc, {
+		formats: ["avif", "webp", originalType],
+		urlPath: path.join("/", path.relative(inputDir, path.dirname(imageSrc))),
+		outputDir: path.dirname(
+			path.join(outputDir, path.relative(inputDir, imageSrc))
+		),
+		filenameFormat(id, src, width, format) {
+			const extension = path.extname(src);
+			const name = path.basename(src, extension);
 
-  const metadata = await Image(imageSrc, {
-    formats: ["avif", "webp", originalType],
-    urlPath: path.join("/", path.relative(inputDir, path.dirname(imageSrc))),
-    outputDir: path.dirname(
-      path.join(outputDir, path.relative(inputDir, imageSrc))
-    ),
-    filenameFormat(id, src, width, format) {
-      const extension = path.extname(src);
-      const name = path.basename(src, extension);
+			return `${name}.${format}`;
+		},
+		useCache: false,
+	});
 
-      return `${name}.${format}`;
-    },
-    useCache: false,
-  });
+	const lowsrc = metadata[originalType][0];
+	const highsrc = metadata[originalType][metadata[originalType].length - 1];
 
-  const lowsrc = metadata[originalType][0];
-  const highsrc = metadata[originalType][metadata[originalType].length - 1];
-
-  return `<picture>
+	return `<picture>
       ${Object.values(metadata)
-        .map((imageFormat) => {
-          return `  <source type="${
-            imageFormat[0].sourceType
-          }" srcset="${imageFormat
-            .map((entry) => entry.srcset.split(" ")[0])
-            .join(", ")}">`;
-        })
-        .join("\n")}
+				.map((imageFormat) => {
+					return `  <source type="${
+						imageFormat[0].sourceType
+					}" srcset="${imageFormat
+						.map((entry) => entry.srcset.split(" ")[0])
+						.join(", ")}">`;
+				})
+				.join("\n")}
         <img
           src="${lowsrc.url}"
           width="${highsrc.width}"

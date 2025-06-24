@@ -1,21 +1,19 @@
-const fs = require("fs");
-const path = require("path");
-const markdownIt = require("markdown-it");
-const markdownItFrontMatter = require("markdown-it-front-matter");
+import fs from "fs";
+import path from "path";
+import markdownIt from "markdown-it";
+import markdownItFrontMatter from "markdown-it-front-matter";
 
 const MD = markdownIt({ html: true }).use(markdownItFrontMatter, () => {});
 
-module.exports = {
+export default {
 	permalink(data) {
 		if (data.permalink) return data.permalink;
 
-		if (data.page.inputPath.includes("webdev/")) {
-			return data.page.inputPath
-				.replace("webdev/", "")
-				.replace(".md", "/index.html");
+		if (data.page.inputPath.includes("notes/")) {
+			return `${data.page.filePathStem}.html`;
 		}
 
-		return null;
+		return data.fileSlug;
 	},
 
 	layout({ page }) {

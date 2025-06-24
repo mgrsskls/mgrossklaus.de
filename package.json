@@ -5,8 +5,9 @@
 		"css": "postcss src/css/common.css src/css/index.css src/css/note.css --dir dist/css"
 	},
 	"engines": {
-		"node": "~20.12.2"
+		"node": ">=22"
 	},
+	"type": "module",
 	"scripts": {
 		"dev": "eleventy --serve",
 		"build": "npm run build:css && npm run build:11ty",
