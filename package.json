@@ -22,7 +22,7 @@
 		"@11ty/eleventy-img": "^7.0.0",
 		"@11ty/eleventy-plugin-rss": "^3.0.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-		"cssnano": "^8.0.7",
+		"cssnano": "^9.0.5",
 		"html-minifier": "^4.0.0",
 		"jsdom": "^30.1.0",
 		"markdown-it-front-matter": "^0.2.4",
