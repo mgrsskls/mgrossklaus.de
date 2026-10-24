@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Michael Großklaus, Head of Engineering at SCAYLE.">
+		<meta name="color-scheme" content="light dark">
+		<title>Michael Großklaus</title>
+		<style>
+			html {
+				color-scheme: light dark;
+			}
+
+			body {
+				--c-primary-hue: 204;
+				--c-secondary-hue: 312;
+
+				--c-bg: light-dark(#fff, hsl(var(--c-primary-hue), 40%, 15%));
+				--c-bg-card: light-dark(
+					hsl(var(--c-primary-hue), 40%, 98%),
+					hsl(var(--c-primary-hue), 40%, 12%)
+				);
+				--c-text: light-dark(
+					hsl(var(--c-primary-hue), 30%, 20%),
+					hsl(var(--c-primary-hue), 30%, 80%)
+				);
+				--c-text-light: light-dark(
+					hsl(var(--c-primary-hue), 50%, 40%),
+					hsl(var(--c-primary-hue), 50%, 70%)
+				);
+				--c-links: light-dark(
+					hsl(var(--c-secondary-hue), 30%, 25%),
+					hsl(var(--c-secondary-hue), 30%, 75%)
+				);
+				--c-headings: light-dark(
+					hsl(var(--c-primary-hue), 80%, 20%),
+					hsl(var(--c-primary-hue), 80%, 90%)
+				);
+				--c-divider: light-dark(rgb(0 0 0 / 10%), rgb(255 255 255 / 10%));
+
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+					Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+				line-height: 1.75;
+				margin: 0;
+				min-block-size: 100dvb;
+				display: grid;
+				place-items: center;
+				padding: 2em;
+				box-sizing: border-box;
+				color: var(--c-text);
+				background: var(--c-bg);
+			}
+
+			main {
+				inline-size: 100%;
+				max-inline-size: 26em;
+			}
+
+			header {
+				display: flex;
+				align-items: center;
+				gap: 1.25em;
+
+				img {
+					flex-shrink: 0;
+					inline-size: 5em;
+					block-size: auto;
+					border-radius: 0.3125em;
+				}
+			}
+
+			h1 {
+				margin-block: 0;
+				font-size: clamp(1.4em, 5vi, 2em);
+				line-height: 1.25;
+				color: var(--c-headings);
+
+				span {
+					display: block;
+					margin-block-start: 0.25em;
+					font-size: 0.6em;
+					font-weight: 500;
+					color: var(--c-text-light);
+				}
+			}
+
+			p,
+			dl {
+				margin-block: 2em;
+			}
+
+			dl {
+				display: grid;
+				grid-template-columns: auto 1fr;
+				gap: 0.5em 1em;
+				padding-block-end: 2em;
+				border-block-end: 0.0625em solid var(--c-divider);
+			}
+
+			.Project-logo {
+				display: block;
+				inline-size: fit-content;
+
+				img {
+					display: block;
+					inline-size: 12em;
+					max-inline-size: 100%;
+					block-size: auto;
+				}
+			}
+
+			.Project p {
+				margin-block: 1em 0;
+			}
+
+			dt {
+				font-weight: 600;
+				color: var(--c-text-light);
+			}
+
+			dd {
+				margin-inline-start: 0;
+				overflow-wrap: anywhere;
+			}
+
+			a {
+				color: var(--c-links);
+				text-underline-offset: 0.3em;
+
+				&:focus-visible {
+					outline: 0.125em solid currentColor;
+					outline-offset: 0.1em;
+				}
+			}
+
+			@media (width < 24em) {
+				dl {
+					grid-template-columns: 1fr;
+					row-gap: 0;
+				}
+
+				dd + dt {
+					margin-block-start: 0.75em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<header>
+				<img src="mg.webp" alt="Portrait of Michael Großklaus" width="400" height="400">
+				<h1>
+					Michael Großklaus
+					<span>Head of Engineering at <a href="https://www.scayle.com">SCAYLE</a></span>
+				</h1>
+			</header>
+
+			<p>I help build engineering teams, guide them through projects and raise the quality of what they ship.</p>
+
+			<dl>
+				<dt>E-Mail</dt>
+				<dd data-email="bWdAbWdyb3Nza2xhdXMuZGU=">Please enable JavaScript to see the e-mail address.</dd>
+				<dt>GitHub</dt>
+				<dd><a href="https://github.com/mgrsskls">github.com/mgrsskls</a></dd>
+				<dt>Mastodon</dt>
+				<dd><a href="https://indieweb.social/@mgrsskls" rel="me">indieweb.social/@mgrsskls</a></dd>
+			</dl>
+
+			<div class="Project">
+				<a class="Project-logo" href="https://www.hifilog.com">
+					<picture>
+						<source srcset="logo-light.svg" media="(prefers-color-scheme: dark)">
+						<img src="logo-dark.svg" alt="HiFi Log" width="2684" height="384">
+					</picture>
+				</a>
+				<p>I also built <a href="https://www.hifilog.com">HiFi Log</a>, a user-driven database for hi-fi products and brands.</p>
+			</div>
+		</main>
+
+		<script>
+			for (const el of document.querySelectorAll("[data-email]")) {
+				const email = atob(el.dataset.email);
+				const link = document.createElement("a");
+
+				link.href = `mailto:${email}`;
+				link.textContent = email;
+				el.replaceChildren(link);
+			}
+		</script>
+	</body>
+</html>
